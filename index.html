@@ -5,92 +5,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./pages/index.css">
-  <script src="script.js"></script>
+  <script src="scripts/index.js"></script>
   <title>Around The U.S.</title>
 </head>
 
 <body class="page">
+    <header class="header">
+      <img class="header__vector" src="/images/header-vector.svg" alt="around the US icon">
+      <hr class="header__line">
+    </header>
 
-  <header class="header">
-    <img class="header__vector" src="/images/header-vector.svg" alt="around the US icon">
-    <hr class="header__line">
-  </header>
-
-  <main>
-    <section class="profile">
-      <div class="profile__img-place">
-        <img class="profile__avatar" src="/images/profile-avatar.jpg" alt="profile picture">
-      </div>
-      <div class="profile__info">
-        <div class="profile__details-container">
-          <div class="profile__text-box">
-            <h2 class="profile__name">Jacques cousteau</h2>
-            <p class="profile__subtitle">Explorer</p>
-          </div>
-        
-          <div class="profile__square">
-            <img class="profile__edit-icon" src="/images/profile-edit-icon.svg" alt="edit info icon">
-          </div>
+    <main>
+      <section class="profile">
+        <div class="profile__img-place">
+          <img class="profile__avatar" src="/images/profile-avatar.jpg" alt="profile picture">
         </div>
-        <button class="profile__add-btn">
-          <img class="profile__plus-icon" src="/images/profile-add-icon.svg" alt="Add button icon">
-        </button>
-      </div>
-    </section>
+        <div class="profile__info">
+          <div class="profile__details-container">
+            <div class="profile__text-box">
+              <h2 class="profile__name">Jacques cousteau</h2>
+              <p class="profile__subtitle">Explorer</p>
+            </div>
 
-    <section class="elements">
-      <ul class="elements__list">
-        <li class="elements__item">
-          <img class="elements__img" src="/images/grid-img-2.png">
-          <div class="elements__description">
-            <p class="elements__title">Yosemite Valley</p>
-            <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
+            <button class="profile__edit-btn">
+              <img class="profile__edit-icon" src="/images/profile-edit-icon.svg" alt="edit info icon">
+            </button>
           </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="/images/grid-img-4.png">
-          <div class="elements__description">
-            <p class="elements__title">Lake Louise</p>
-            <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="/images/grid-img-6.png">
-          <div class="elements__description">
-            <p class="elements__title">Bald Mountains</p>
-            <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="/images/grid-img-3.png">
-          <div class="elements__description">
-            <p class="elements__title">Latermar</p>
-            <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="/images/grid-img-5.png">
-          <div class="elements__description">
-            <p class="elements__title">Vanoise National Park</p>
-            <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="/images/grid-img-1.png">
-          <div class="elements__description">
-            <p class="elements__title">Lago di Braies</p>
-            <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
-          </div>
-        </li>
-      </ul>
-    </section>
-  </main>
+          <button class="profile__add-btn">
+            <img class="profile__plus-icon" src="/images/profile-add-icon.svg" alt="Add button icon">
+          </button>
+        </div>
+      </section>
 
+      <section class="elements">
+        <ul class="elements__list">
+          <li class="elements__item">
+            <img class="elements__img" src="/images/grid-img-2.png">
+            <div class="elements__description">
+              <p class="elements__title">Yosemite Valley</p>
+              <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__img" src="/images/grid-img-4.png">
+            <div class="elements__description">
+              <p class="elements__title">Lake Louise</p>
+              <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__img" src="/images/grid-img-6.png">
+            <div class="elements__description">
+              <p class="elements__title">Bald Mountains</p>
+              <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__img" src="/images/grid-img-3.png">
+            <div class="elements__description">
+              <p class="elements__title">Latermar</p>
+              <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__img" src="/images/grid-img-5.png">
+            <div class="elements__description">
+              <p class="elements__title">Vanoise National Park</p>
+              <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
+            </div>
+          </li>
+          <li class="elements__item">
+            <img class="elements__img" src="/images/grid-img-1.png">
+            <div class="elements__description">
+              <p class="elements__title">Lago di Braies</p>
+              <img class="elements__like-icon" src="/images/heart-icon.svg" alt="heart icon">
+            </div>
+          </li>
+        </ul>
+      </section>
 
-  <footer class="footer">
-    <p class="footer__copyright">&copy; 2021 Seaf Aliyan</p>
-  </footer>
+      <section class="form-overlay">
+        <button class="form__close-btn"><img class="form__close-img" src="/images/profile-add-icon.svg" alt="close button"></button>
+        <form class="form">
+        <p class="form__title">Edit profile</p>
+        <input class="form__field_name" type="text" id="fullName" placeholder="Full Name">
+        <img class="form__line-img" src="/images/form-line.svg" alt="seperator line">
+        <input class="form__field_about" type="text" id="about" placeholder="About">
+        <img class="form__line-img" src="/images/form-line.svg" alt="seperator line">
+        <button class="form__submit-btn">Save</button>
+        </form>
+      </section>
+    </main>
 
+    <footer class="footer">
+      <p class="footer__copyright">&copy; 2021 Seaf Aliyan</p>
+    </footer>
 </body>
 
 </html>

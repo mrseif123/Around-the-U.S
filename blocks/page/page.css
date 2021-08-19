@@ -4,5 +4,6 @@
   padding: 0;
   color: #fff;
   font-family: Inter;
-
+  position: relative;
+  z-index: 1;
 }

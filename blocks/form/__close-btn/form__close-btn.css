@@ -1,0 +1,16 @@
+.form__close-btn {
+  border: 0px;
+  cursor: pointer;
+  background-color: Transparent;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 31%;
+  left: 66.5%
+}
+
+@media screen and (max-width: 470px) {
+  .form__close-btn {
+    top: 17%;
+    left: 73%;
+  }
+}

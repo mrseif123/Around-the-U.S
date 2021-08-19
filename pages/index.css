@@ -4,6 +4,7 @@
 @import url(/blocks/page/page.css);
 @import url(/blocks/profile/profile.css);
 @import url(/blocks/elements/elements.css);
-
+@import url(/blocks/form/form.css);
+@import url(/blocks/form-overlay/form-overlay.css);
 
 @import url(/blocks/footer/footer.css);

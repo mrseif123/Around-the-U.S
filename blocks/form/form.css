@@ -1,0 +1,29 @@
+@import url(./__field/form__field_about.css);
+@import url(./__field/form__field_name.css);
+@import url(./__submit-btn/form__submit-btn.css);
+@import url(./__title/form__title.css);
+@import url(./__line-img/form__line-img.css);
+@import url(./__close-btn/form__close-btn.css);
+@import url(./__close-img/form__close-img.css);
+
+.form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 430px;
+  height: 330px;
+  z-index: 3;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+@media screen and (max-width: 470px) {
+  .form {
+    width: 282px;
+    height: 322px;
+  }
+}
