@@ -1,0 +1,21 @@
+.profile__edit-icon {
+  width: 10px;
+  height: 10px;
+}
+
+@media screen and (max-width: 880px) {
+  .profile__edit-icon {
+    margin-bottom: 3px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile__edit-icon {
+    width: 7.5px;
+    height: 7.5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+}

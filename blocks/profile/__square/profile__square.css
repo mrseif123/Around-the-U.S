@@ -1,0 +1,27 @@
+.profile__square {
+  border: solid 1px #fff;
+  box-sizing: border-box;
+  width: 24px;
+  height: 24px;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 18px;
+}
+
+@media screen and (max-width: 880px) {
+  .profile__square {
+    width: 18px;
+    height: 18px;
+    margin-top: 6px;
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .profile__square {
+    width: 18px;
+    height: 18px;
+    margin-top: 4px;
+    margin-left: 10px;
+  }
+}
