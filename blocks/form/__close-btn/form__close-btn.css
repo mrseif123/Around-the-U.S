@@ -4,17 +4,24 @@
   background-color: Transparent;
   transform: rotate(45deg);
   position: absolute;
-  top: 31%;
-  left: 66.5%
+  top: -204px;
+  left: 212px ;
 }
 
 .form__close-btn:hover {
   opacity: 0.6;
 }
 
+@media screen and (max-width: 525px) {
+  .form__close-btn {
+    top: -224px;
+    left: 170px;
+  }
+}
+
 @media screen and (max-width: 470px) {
   .form__close-btn {
-    top: 17%;
-    left: 73%;
+    top: -224px;
+    left: 115px;
   }
 }
