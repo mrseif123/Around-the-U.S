@@ -1,16 +1,17 @@
-.form__field_name {
+.form__field-about {
   color: #000000;
   background-color: transparent;
   margin-right: auto;
   margin-left: auto;
   width: 358px;
+  height: 14px;
   border: transparent;
   font-size: 14px;
   line-height: 17px;
 }
 
 @media screen and (max-width: 470px) {
-  .form__field_name {
+  .form__field-about {
     width: 238px;
   }
 }
