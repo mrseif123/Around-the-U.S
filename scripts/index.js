@@ -7,8 +7,8 @@ let profile_name = profile_text.querySelector('.profile__name');
 let profile_subtitle = profile_text.querySelector('.profile__subtitle');
 
 let form_content = document.querySelector('.popup-container');
-let form_name_input = form_content.querySelector('.form__field_name')
-let form_about_input = form_content.querySelector('.form__field_about')
+let form_name_input = form_content.querySelector('.form__field-name')
+let form_about_input = form_content.querySelector('.form__field-about')
 let form_close_btn = form_content.querySelector('.form__close-btn');
 let form_submit_btn = form_content.querySelector('.form__submit-btn')
 
@@ -27,8 +27,8 @@ form_close_btn.addEventListener("click", function () {
 
 form_submit_btn.addEventListener("click", function (event) {
   event.preventDefault()
-  let name = form_content.querySelector('.form__field_name')
-  let about = form_content.querySelector('.form__field_about')
+  let name = form_content.querySelector('.form__field-name')
+  let about = form_content.querySelector('.form__field-about')
   form_content.style.display = "none";
   console.log(form_name_input.getAttribute("value"))
   profile_name.textContent = name.value
