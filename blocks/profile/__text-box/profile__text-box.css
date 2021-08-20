@@ -4,3 +4,11 @@
   margin-bottom: 21px;
   margin-left: 3.75px;
 }
+
+
+@media screen and (max-width:768px) {
+  .profile__text-box {
+    margin-bottom: 36px;
+    margin-left: 0px;
+  }
+}

@@ -4,3 +4,10 @@
   display: flex;
   justify-content: center;
 }
+
+
+@media screen and (max-width: 880px) {
+  .profile__img-place {
+    align-self: center;
+  }
+}
