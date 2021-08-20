@@ -7,9 +7,9 @@
 @import url(./__close-img/form__close-img.css);
 
 .form {
-  top: 50%;
+  /* top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   width: 430px;
   height: 330px;
   z-index: 3;
