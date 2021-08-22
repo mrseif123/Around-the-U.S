@@ -1,10 +1,10 @@
-@import url(./__field/form__field-about.css);
-@import url(./__field/form__field-name.css);
-@import url(./__submit-btn/form__submit-btn.css);
-@import url(./__title/form__title.css);
-@import url(./__line-img/form__line-img.css);
-@import url(./__close-btn/form__close-btn.css);
-@import url(./__close-img/form__close-img.css);
+@import url("./__field/form__field-about.css");
+@import url("./__field/form__field-name.css");
+@import url("./__submit-btn/form__submit-btn.css");
+@import url("./__title/form__title.css");
+@import url("./__line-img/form__line-img.css");
+@import url("./__close-btn/form__close-btn.css");
+@import url("./__close-img/form__close-img.css");
 
 .form {
   /* top: 50%;
