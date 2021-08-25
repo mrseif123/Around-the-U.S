@@ -21,7 +21,8 @@ profile_edit_btn.addEventListener("click", function () {
   form_about_input.setAttribute("value", profile_subtitle.textContent)
 } )
 
-form_close_btn.addEventListener("click", function () {
+form_close_btn.addEventListener("click", function (event) {
+  event.preventDefault()
   form_content.style.display = "none";
 })
 

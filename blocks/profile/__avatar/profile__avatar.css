@@ -7,3 +7,9 @@
   background-attachment: fixed;
   background-position: center;
 }
+
+@media screen and (max-width: 580px) {
+  .profile__avatar {
+    margin-top: 0.25px;
+  }
+}
