@@ -8,4 +8,6 @@
 * Responsive Design
 * Basic JavaScript
 
+My first attempt im usimg JavaScript to manipulate DOM objects.
+
 [A direct link (GitHub Pages)](https://mrseif123.github.io/Web-Project-4)
