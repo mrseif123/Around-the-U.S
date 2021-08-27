@@ -16,26 +16,28 @@ let elementsContent = document.querySelector('.elements')
 let heartIcon = elementsContent.querySelectorAll('.elements__like-icon')
 
 profileEditBtn.addEventListener("click", function () {
-  formContent.style.display = "flex";
-  formNameInput.setAttribute("value", profileName.textContent)
-  formAboutInput.setAttribute("value", profileSubtitle.textContent)
-} )
+  showPopup(formContent);
+  formNameInput.value = profileName.textContent
+  formAboutInput.value = profileSubtitle.textContent
+})
 
 formCloseBtn.addEventListener("click", function (event) {
   event.preventDefault()
-  formContent.style.display = "none";
+  formContent.classList.remove("popup-container_mode_open")
+  formContent.classList.add("popup-container_mode_hidden");
 })
 
 formSubmitBtn.addEventListener("click", function (event) {
   event.preventDefault()
   let name = formContent.querySelector('.form__field-name')
   let about = formContent.querySelector('.form__field-about')
-  formContent.style.display = "none";
-  console.log(formNameInput.getAttribute("value"))
+  formContent.classList.remove("popup-container_mode_open")
+  formContent.classList.add("popup-container_mode_hidden");
   profileName.textContent = name.value
   profileSubtitle.textContent = about.value
 })
 
-
-
-
+function showPopup(popUpElement){
+  popUpElement.classList.remove("popup-container_mode_hidden");
+  popUpElement.classList.add("popup-container_mode_open");
+}
