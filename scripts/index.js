@@ -16,7 +16,7 @@ let elements_content = document.querySelector('.elements')
 let heart_icons = elements_content.querySelectorAll('.elements__like-icon')
 
 profile_edit_btn.addEventListener("click", function () {
-  form_content.style.display = "block";
+  form_content.style.display = "flex";
   form_name_input.setAttribute("value", profile_name.textContent)
   form_about_input.setAttribute("value", profile_subtitle.textContent)
 } )
