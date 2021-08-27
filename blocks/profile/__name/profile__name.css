@@ -5,9 +5,8 @@
   line-height: 1.14;
   margin: 0;
   padding: 0;
-  margin-bottom: 16px;
-  width: 100%;
-
+  /* padding-bottom: 16px;
+  padding-top: 22px; */
 }
 
 @media screen and (max-width: 880px) {

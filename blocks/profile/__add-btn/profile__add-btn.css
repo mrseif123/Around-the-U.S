@@ -6,6 +6,8 @@
   cursor:pointer;
   background-color: transparent;
   margin: 35px 0 35px 154px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .profile__add-btn:hover {

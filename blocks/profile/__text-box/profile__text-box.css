@@ -3,12 +3,22 @@
   flex-direction: column;
   margin-bottom: 21px;
   margin-left: 3.75px;
+  justify-content: space-around;
 }
 
 
 @media screen and (max-width:768px) {
   .profile__text-box {
-    margin-bottom: 36px;
+    margin-bottom: 26px;
     margin-left: 0px;
+    justify-content: center;
   }
 }
+
+/* @media screen and (max-width:550px) {
+  .profile__text-box {
+    margin-bottom: 36px;
+    margin-left: 0px;
+    margin-top: 36.25px;
+  }
+} */
