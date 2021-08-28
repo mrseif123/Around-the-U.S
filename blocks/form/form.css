@@ -1,4 +1,5 @@
-@import url("./__field/form__field-about.css");
+@import url("./__field/_type/form__field_type_about.css");
+@import url("./__field/_type/form__field_type_name.css");
 @import url("./__field/form__field-name.css");
 @import url("./__submit-btn/form__submit-btn.css");
 @import url("./__title/form__title.css");
