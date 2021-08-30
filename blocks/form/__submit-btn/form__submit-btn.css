@@ -5,6 +5,7 @@
   height: 50px;
   color:white;
   margin: 0 36px 36.5px 36px;
+  cursor: pointer;
 }
 
 .form__submit-btn:hover {

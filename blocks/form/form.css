@@ -1,15 +1,11 @@
-@import url("./__field/_type/form__field_type_about.css");
-@import url("./__field/_type/form__field_type_name.css");
-@import url("./__field/form__field-name.css");
+@import url("./__field/form__field.css");
 @import url("./__submit-btn/form__submit-btn.css");
 @import url("./__title/form__title.css");
-@import url("./__line-img/form__line-img.css");
 @import url("./__close-btn/form__close-btn.css");
 @import url("./__close-img/form__close-img.css");
 
 .form {
   width: 430px;
-  height: 330px;
   position: relative;
   background-color: #FFFFFF;
   margin-left: auto;
@@ -24,6 +20,5 @@
 @media screen and (max-width: 470px) {
   .form {
     width: 282px;
-    height: 322px;
   }
 }

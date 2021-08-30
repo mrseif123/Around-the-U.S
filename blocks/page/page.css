@@ -3,7 +3,7 @@
   margin: 0;
   padding: 0;
   color: #fff;
-  font-family: Inter;
+  font-family: Inter, Arial, Helvetica, sans-serif;
   position: relative;
   z-index: 1;
 }

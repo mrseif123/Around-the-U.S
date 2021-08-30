@@ -7,6 +7,7 @@
 @import url("../blocks/profile/profile.css");
 @import url("../blocks/elements/elements.css");
 @import url("../blocks/form/form.css");
-@import url("../blocks/popup-container/popup-container.css");
+@import url("../blocks/popup/popup.css");
+@import url("../blocks/popup/popup_hidden.css");
 
 @import url("../blocks/footer/footer.css");

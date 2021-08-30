@@ -11,28 +11,23 @@
 <body class="page" id="body">
   <header class="header">
     <img class="header__vector" src="./images/header-vector.svg" alt="around the US icon">
-    <hr class="header__line">
   </header>
 
   <main id="main_container">
 
     <section class="profile">
-      <div class="profile__img-place">
-        <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="profile picture">
-      </div>
+      <img class="profile__img-place profile__avatar" src="./images/profile-avatar.jpg" alt="profile picture">
       <div class="profile__info">
         <div class="profile__details-container">
           <div class="profile__text-box">
-            <h2 class="profile__name">Jacques cousteau</h2>
+            <h1 class="profile__name">Jacques cousteau</h1>
             <p class="profile__subtitle">Explorer</p>
           </div>
 
-          <button class="profile__edit-btn" id="profile_edit_button">
-            <img class="profile__edit-icon" src="./images/profile-edit-icon.svg" alt="edit info icon">
+          <button type="button" aria-label="edit profile" class="profile__edit-btn" id="profile_edit_button">
           </button>
         </div>
-        <button class="profile__add-btn" id="profile_add_button">
-          <img class="profile__plus-icon" src="./images/profile-add-icon.svg" alt="Add button icon">
+        <button type="button" aria-label="add image" class="profile__add-btn" id="profile_add_button">
         </button>
       </div>
     </section>
@@ -42,60 +37,62 @@
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-2.png" alt="A picture of yosemite park">
           <div class="elements__description">
-            <h4 class="elements__title">Yosemite Valley</h4>
-            <img class="elements__like-icon" src="./images/heart-icon.svg" alt="heart icon">
-          </div>
+            <h2 class="elements__title">Yosemite Valley</h2>
+          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
+            alt="heart icon"></button> </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-4.png" alt="A picture of lake lousie">
           <div class="elements__description">
-            <h4 class="elements__title">Lake Louise</h4>
-            <img class="elements__like-icon" src="./images/heart-icon.svg" alt="heart icon">
-          </div>
+            <h2 class="elements__title">Lake Louise</h2>
+          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
+            alt="heart icon"></button> </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-6.png" alt="A picture of bald mountains">
           <div class="elements__description">
-            <h4 class="elements__title">Bald Mountains</h4>
-            <img class="elements__like-icon" src="./images/heart-icon.svg" alt="heart icon">
-          </div>
+            <h2 class="elements__title">Bald Mountains</h2>
+          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
+            alt="heart icon"></button> </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-3.png" alt="A picture of Latermar">
           <div class="elements__description">
-            <h4 class="elements__title">Latermar</h4>
-            <img class="elements__like-icon" src="./images/heart-icon.svg" alt="heart icon">
-          </div>
+            <h2 class="elements__title">Latermar</h2>
+          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
+            alt="heart icon"></button> </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-5.png" alt="A picture of Vanoise national park">
           <div class="elements__description">
-            <h4 class="elements__title">Vanoise National Park</h4>
-            <img class="elements__like-icon" src="./images/heart-icon.svg" alt="heart icon">
-          </div>
+            <h2 class="elements__title">Vanoise National Park</h2>
+          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
+            alt="heart icon"></button> </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-1.png" alt="A picture of lago di braies">
           <div class="elements__description">
-            <h4 class="elements__title">Lago di Braies</h4>
-            <img class="elements__like-icon" src="./images/heart-icon.svg" alt="heart icon">
+            <h2 class="elements__title">Lago di Braies</h2>
+            <button type="image" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
+              alt="heart icon"></button>
           </div>
         </li>
       </ul>
     </section>
 
-    <section class="popup-container popup-container_mode_hidden">
-        <form class="form">
-          <button class="form__close-btn" id="close_button">
-            <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
-          </button>
-          <h4 class="form__title">Edit profile</h4>
-          <input class="form__field-name" type="text" id="fullName" placeholder="Full Name">
-          <img class="form__line-img" src="./images/form-line.svg" alt="seperator line">
-          <input class="form__field-about" type="text" id="about" placeholder="About">
-          <img class="form__line-img" src="./images/form-line.svg" alt="seperator line">
-          <button class="form__submit-btn" id="form__submit-button">Save</button>
-        </form>
+    <section class="popup_hidden">
+      <div>
+      <form class="form" name="edit_profile_form">
+        <button type="button" aria-label="close profile editing form" class="form__close-btn" id="close_button">
+          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+        </button>
+        <h2 class="form__title">Edit profile</h2>
+        <input class="form__field" type="text" id="fullName" placeholder="Full Name">
+        <input class="form__field" type="text" id="about" placeholder="About">
+        <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
+          id="form__submit-button">Save</button>
+      </form>
+      </div>
     </section>
   </main>
 

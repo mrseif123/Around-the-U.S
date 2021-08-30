@@ -4,7 +4,6 @@
 }
 @media screen and (max-width: 768px) {
   .profile__details-container {
-    display: flex;
     margin-top: 26px;
   }
 }

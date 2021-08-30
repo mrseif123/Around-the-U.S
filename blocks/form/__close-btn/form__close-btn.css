@@ -6,6 +6,7 @@
   position: absolute;
   top: -50px;
   right: -50px;
+  
 }
 
 .form__close-btn:hover {
@@ -14,13 +15,7 @@
 
 @media screen and (max-width: 525px) {
   .form__close-btn {
-    top: -100px;
+    top: -50px;
     right: -5px;
-  }
-}
-
-@media screen and (max-width: 470px) {
-  .form__close-btn {
-    top: -70px;
   }
 }

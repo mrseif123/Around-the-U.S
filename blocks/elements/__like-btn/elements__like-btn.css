@@ -1,0 +1,16 @@
+@import url("./_active/elements__like-btn_active.css");
+
+.elements__like-btn {
+  margin: 0;
+  width: 21px;
+  height: 19px;
+  background-color: transparent;
+  background: url("../../../images/heart-icon.svg") no-repeat;
+  background-position: center;
+  border: 0;
+  background-size: 21px 19px;
+}
+
+.elements__like-btn:hover {
+  opacity: 0.5;
+}

@@ -6,9 +6,10 @@ let profileText = profileContent.querySelector('.profile__info');
 let profileName = profileText.querySelector('.profile__name');
 let profileSubtitle = profileText.querySelector('.profile__subtitle');
 
-let formContent = document.querySelector('.popup-container');
-let formNameInput = formContent.querySelector('.form__field-name')
-let formAboutInput = formContent.querySelector('.form__field-about')
+let formContent = document.querySelector('.popup_hidden');
+let formNameInput = document.getElementById("fullName")
+let formAboutInput = document.getElementById("about")
+let formProfile = document.forms.edit_profile_form
 let formCloseBtn = formContent.querySelector('.form__close-btn');
 let formSubmitBtn = formContent.querySelector('.form__submit-btn')
 
@@ -22,22 +23,21 @@ profileEditBtn.addEventListener("click", function () {
 })
 
 formCloseBtn.addEventListener("click", function (event) {
-  event.preventDefault()
-  formContent.classList.remove("popup-container_mode_open")
-  formContent.classList.add("popup-container_mode_hidden");
+  formContent.classList.remove("popup")
+  formContent.classList.add("popup_hidden");
 })
 
-formSubmitBtn.addEventListener("click", function (event) {
+formProfile.addEventListener("submit", function (event) {
   event.preventDefault()
-  let name = formContent.querySelector('.form__field-name')
-  let about = formContent.querySelector('.form__field-about')
-  formContent.classList.remove("popup-container_mode_open")
-  formContent.classList.add("popup-container_mode_hidden");
+  let name = document.getElementById("fullName")
+  let about = document.getElementById("about")
+  formContent.classList.remove("popup")
+  formContent.classList.add("popup_hidden");
   profileName.textContent = name.value
   profileSubtitle.textContent = about.value
 })
 
 function showPopup(popUpElement){
-  popUpElement.classList.remove("popup-container_mode_hidden");
-  popUpElement.classList.add("popup-container_mode_open");
+  popUpElement.classList.remove("popup_hidden");
+  popUpElement.classList.add("popup");
 }
