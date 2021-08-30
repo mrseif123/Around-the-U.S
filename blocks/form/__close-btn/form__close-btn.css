@@ -1,6 +1,5 @@
 .form__close-btn {
   border: 0px;
-  cursor: pointer;
   background-color: transparent;
   transform: rotate(45deg);
   position: absolute;
