@@ -6,7 +6,7 @@ let profileText = profileContent.querySelector('.profile__info');
 let profileName = profileText.querySelector('.profile__name');
 let profileSubtitle = profileText.querySelector('.profile__subtitle');
 
-let formContent = document.querySelector('.popup-hidden');
+let formContent = document.querySelector('.popup_hidden');
 let formNameInput = document.getElementById("fullName")
 let formAboutInput = document.getElementById("about")
 let formProfile = document.forms.edit_profile_form
@@ -23,21 +23,18 @@ profileEditBtn.addEventListener("click", function () {
 })
 
 formCloseBtn.addEventListener("click", function (event) {
-  formContent.classList.remove("popup")
-  formContent.classList.add("popup-hidden");
+  formContent.classList.add("popup_hidden");
 })
 
 formProfile.addEventListener("submit", function (event) {
   event.preventDefault()
   let name = document.getElementById("fullName")
   let about = document.getElementById("about")
-  formContent.classList.remove("popup")
-  formContent.classList.add("popup-hidden");
+  formContent.classList.add("popup_hidden");
   profileName.textContent = name.value
   profileSubtitle.textContent = about.value
 })
 
 function showPopup(popUpElement){
-  popUpElement.classList.remove("popup-hidden");
-  popUpElement.classList.add("popup");
+  popUpElement.classList.remove("popup_hidden");
 }

@@ -1,10 +1,9 @@
-@import url("./__line/header__line.css");
 @import url("./__vector/header__vector.css");
 
 .header {
   max-width: 880px;
   margin: 45px auto 40px auto;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgb(84, 84, 84, 0.7);
 }
 
 

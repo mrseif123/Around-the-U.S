@@ -16,7 +16,9 @@
   <main id="main_container">
 
     <section class="profile">
-      <img class="profile__img-place profile__avatar" src="./images/profile-avatar.jpg" alt="profile picture">
+      <div class="profile__img-place">
+        <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="profile picture">
+      </div>
       <div class="profile__info">
         <div class="profile__details-container">
           <div class="profile__text-box">
@@ -38,62 +40,62 @@
           <img class="elements__img" src="./images/grid-img-2.png" alt="A picture of yosemite park">
           <div class="elements__description">
             <h2 class="elements__title">Yosemite Valley</h2>
-          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
-            alt="heart icon"></button> </div>
+            <button type="button" aria-label="like image" class="elements__like-btn"></button>
+          </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-4.png" alt="A picture of lake lousie">
           <div class="elements__description">
             <h2 class="elements__title">Lake Louise</h2>
-          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
-            alt="heart icon"></button> </div>
+            <button type="button" aria-label="like image" class="elements__like-btn"></button>
+          </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-6.png" alt="A picture of bald mountains">
           <div class="elements__description">
             <h2 class="elements__title">Bald Mountains</h2>
-          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
-            alt="heart icon"></button> </div>
+            <button type="button" aria-label="like image" class="elements__like-btn"></button>
+          </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-3.png" alt="A picture of Latermar">
           <div class="elements__description">
             <h2 class="elements__title">Latermar</h2>
-          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
-            alt="heart icon"></button> </div>
+            <button type="button" aria-label="like image" class="elements__like-btn"></button>
+          </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-5.png" alt="A picture of Vanoise national park">
           <div class="elements__description">
             <h2 class="elements__title">Vanoise National Park</h2>
-          <button type="button" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
-            alt="heart icon"></button> </div>
+            <button type="button" aria-label="like image" class="elements__like-btn"></button>
+          </div>
         </li>
         <li class="elements__item">
           <img class="elements__img" src="./images/grid-img-1.png" alt="A picture of lago di braies">
           <div class="elements__description">
             <h2 class="elements__title">Lago di Braies</h2>
-            <button type="image" aria-label="like image" class="elements__like-btn" src="./images/heart-icon.svg"
-              alt="heart icon"></button>
+            <button type="button" aria-label="like image" class="elements__like-btn"></button>
           </div>
         </li>
       </ul>
     </section>
 
-    <section class="popup-hidden">
-      <div>
-      <form class="form" name="edit_profile_form">
-        <button type="button" aria-label="close profile editing form" class="form__close-btn" id="close_button">
-          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
-        </button>
-        <h2 class="form__title">Edit profile</h2>
-        <input class="form__field" type="text" id="fullName" placeholder="Full Name">
-        <input class="form__field" type="text" id="about" placeholder="About">
-        <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
-          id="form__submit-button">Save</button>
-      </form>
+    <section class="popup popup_hidden">
+      <div class="form-container">
+        <form class="form" name="edit_profile_form">
+          <button type="button" aria-label="close profile editing form" class="form__close-btn" id="close_button">
+            <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+          </button>
+          <h2 class="form__title">Edit profile</h2>
+          <input class="form__field" type="text" name="name_input_field" id="fullName" placeholder="Full Name">
+          <input class="form__field" type="text" name="about_input_field" id="about" placeholder="About">
+          <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
+            id="form__submit-button">Save</button>
+        </form>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
