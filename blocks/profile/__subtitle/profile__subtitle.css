@@ -17,6 +17,11 @@
     align-self: center;
     margin-top: 14px;
     max-width: 282px;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .profile__subtitle {
     max-width: calc(282px - 30px);
   }
 }
