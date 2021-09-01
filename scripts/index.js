@@ -112,5 +112,5 @@ function addElement(titleValue, linkValue) {
   const placeElement = elementTemplate.querySelector('.elements__item').cloneNode(true);
   placeElement.querySelector(".elements__title").textContent = titleValue.value;
   placeElement.querySelector(".elements__img").src = linkValue.value;
-  elementsList.append(placeElement)
+  elementsList.prepend(placeElement)
 }
