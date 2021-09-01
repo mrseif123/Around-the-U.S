@@ -82,19 +82,43 @@
     </section>
 
     <section class="popup popup_hidden">
+
       <div class="popup__form-container">
         <form class="form" name="edit_profile_form">
-          <button type="button" aria-label="close profile editing form" class="form__close-btn" id="close_button">
+          <button type="button" aria-label="close profile editing form" class="form__close-btn" id="close_button_profile">
             <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
           </button>
           <h2 class="form__title">Edit profile</h2>
           <input class="form__field" type="text" name="name_input_field" id="fullName" placeholder="Full Name">
           <input class="form__field" type="text" name="about_input_field" id="about" placeholder="About">
           <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
-            id="form__submit-button">Save</button>
+            id="form__profile-submit-button">Save</button>
+        </form>
+      </div>
+
+      <div class="popup__add-container popup_hidden">
+        <form class="form" name="add_place_form">
+          <button type="button" aria-label="close place addition form" class="form__close-btn" id="close_button_add">
+            <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+          </button>
+          <h2 class="form__title">New place</h2>
+          <input class="form__field" type="text" name="title_input_field" id="title" placeholder="Title">
+          <input class="form__field" type="text" name="link_input_field" id="link" placeholder="Image link">
+          <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
+            id="form__place-submit-button">Create</button>
         </form>
       </div>
     </section>
+
+    <template id="element-template">
+      <li class="elements__item">
+        <img class="elements__img">
+        <div class="elements__description">
+          <h2 class="elements__title"></h2>
+          <button type="button" aria-label="like image" class="elements__like-btn"></button>
+        </div>
+      </li>
+    </template>
 
   </main>
 
