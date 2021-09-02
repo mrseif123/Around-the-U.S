@@ -23,6 +23,7 @@ const initialCards = [{
     link: "https://code.s3.yandex.net/web-code/lago.jpg"
   }
 ];
+
 let container = document.querySelectorAll('#body');
 
 let profileContent = document.querySelector('.profile');
@@ -47,16 +48,25 @@ let addPlaceCloseBtn = document.getElementById('close_button_add');
 
 let elementsContent = document.querySelector('.elements')
 let elementsList = elementsContent.querySelector('.elements__list')
-let heartIcon = elementsContent.querySelectorAll('.elements__like-icon')
+let elementItem = elementsContent.querySelector('.elements__item')
+let likeButton = elementsContent.querySelector('.elements__like-btn')
+
+
+let currentCards = []
+initialCards.forEach(x => addElement(x.name, x.link))
+console.log(currentCards)
 
 profileEditBtn.addEventListener("click", function () {
   showPopup(formContent);
+  showPopup(formProfile);
   formNameInput.value = profileName.textContent
   formAboutInput.value = profileSubtitle.textContent
 })
 
 profileEditCloseBtn.addEventListener("click", function (event) {
   hidePopup(formContent)
+  hidePopup(formProfile)
+  hidePopup()
 })
 
 
@@ -78,7 +88,7 @@ addForm.addEventListener("submit", function (event) {
   event.preventDefault()
   const title = document.getElementById("title");
   const link = document.getElementById("link");
-  addElement(title, link);
+  addElement(title.value, link.value);
   hideAllPopups();
   title.value = ""
   link.value = ""
@@ -88,9 +98,12 @@ formProfile.addEventListener("submit", function (event) {
   event.preventDefault()
   let name = document.getElementById("fullName")
   let about = document.getElementById("about")
-  hidePopup(formContent)
+  showPopup(formContent)
   profileName.textContent = name.value
   profileSubtitle.textContent = about.value
+    hidePopup(formContent)
+    hidePopup(formProfile)
+    hidePopup()
 })
 
 function hideAllPopups() {
@@ -110,7 +123,22 @@ function hidePopup(popUpElement) {
 function addElement(titleValue, linkValue) {
   const elementTemplate = document.querySelector("#element-template").content;
   const placeElement = elementTemplate.querySelector('.elements__item').cloneNode(true);
-  placeElement.querySelector(".elements__title").textContent = titleValue.value;
-  placeElement.querySelector(".elements__img").src = linkValue.value;
+  placeElement.querySelector(".elements__title").textContent = titleValue;
+  placeElement.querySelector(".elements__img").src = linkValue;
+
+  placeElement.querySelector(".elements__like-btn").addEventListener("click", function (e) {
+    e.target.classList.toggle("elements__like-btn_active");
+    e.target.classList.toggle("elements__like-btn")
+    console.log(e.target)
+  })
+
+  placeElement.querySelector(".elements__delete-btn").addEventListener("click", function (e) {
+    placeElement.remove()
+  })
+
+  //  placeElement.querySelector(".elements__img").addEventListener("click", function (e) {
+  //    placeElement.remove()
+  //  })
+  
   elementsList.prepend(placeElement)
 }
