@@ -81,11 +81,11 @@
       </ul>
     </section>
 
-    <section class="popup popup_hidden">
-
-      <div class="popup__form-container">
+    <section class="popup popup_hidden ">
+      <div class="popup__form-container popup_hidden fade-in">
         <form class="form" name="edit_profile_form">
-          <button type="button" aria-label="close profile editing form" class="form__close-btn" id="close_button_profile">
+          <button type="button" aria-label="close profile editing form" class="form__close-btn"
+            id="close_button_profile">
             <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
           </button>
           <h2 class="form__title">Edit profile</h2>
@@ -96,7 +96,7 @@
         </form>
       </div>
 
-      <div class="popup__add-container popup_hidden">
+      <div class="popup__add-container popup_hidden popup_hidden fade-in" id="add_container">
         <form class="form" name="add_place_form">
           <button type="button" aria-label="close place addition form" class="form__close-btn" id="close_button_add">
             <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
@@ -108,6 +108,15 @@
             id="form__place-submit-button">Create</button>
         </form>
       </div>
+
+      <!-- <div class="popup__photo">
+        <button type="button" aria-label="close place addition form" class="form__close-btn" id="close_button_add">
+          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+        </button>
+        <img class="popup__place-image" src="https://code.s3.yandex.net/web-code/yosemite.jpg">
+        <h2 class="popup__photo-title"> Image title</h2>
+      </div> -->
+
     </section>
 
     <template id="element-template">
@@ -119,6 +128,16 @@
           <button type="button" aria-label="like image" class="elements__like-btn"></button>
         </div>
       </li>
+    </template>
+
+    <template id="photo-popup-template">
+      <div class="popup__photo fade-in">
+        <button type="button" aria-label="close place addition form" class="popup__img-close-btn" id="close_button_img">
+          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+        </button>
+        <img class="popup__place-image">
+        <h2 class="popup__photo-title"></h2>
+      </div>
     </template>
 
   </main>
