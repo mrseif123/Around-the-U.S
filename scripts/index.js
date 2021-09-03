@@ -183,6 +183,7 @@ function addElement(titleValue, linkValue) {
 
   likeButton.addEventListener("click", function (e) {
     likeButton.classList.toggle("elements__like-btn_active");
+    likeButton.classList.toggle("elements__like-btn_empty");
   })
 
   placeElement.querySelector(".elements__delete-btn").addEventListener("click", function (e) {

@@ -1,11 +1,11 @@
 @import url("./_active/elements__like-btn_active.css");
+@import url("./_empty/elements__like-btn_empty.css");
 
 .elements__like-btn {
   margin: 0;
   width: 21px;
   height: 19px;
   background-color: transparent;
-  background-image: url("../../../images/heart-icon.svg");
   background-position: center;
   border: 0;
   background-size: 21px 19px;
