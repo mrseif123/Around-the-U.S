@@ -1,16 +1,3 @@
 .elements__like-btn_active {
-  background: url("../../../../images/heart-icon-filled.svg") no-repeat;
-  margin: 0;
-  width: 21px;
-  height: 19px;
-  background-color: transparent;
-  background-position: center;
-  border: 0;
-  background-size: 21px 19px;
-  cursor: pointer;
-}
-
-
-.elements__like-btn_active:hover {
-  opacity: 0.5;
+  background-image: url("../../../../images/heart-icon-filled.svg");
 }

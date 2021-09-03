@@ -7,6 +7,7 @@
   top: -10px;
   left: 53%;
   cursor: pointer;
+  margin-top: -660px;
 }
 
 .popup__img-close-btn:hover {

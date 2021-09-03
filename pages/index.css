@@ -14,7 +14,9 @@
 @import url("../blocks/popup/__img-close-btn/popup__img-close-btn.css");
 @import url("../blocks/fade-in/fade-in.css");
 
+@import url("../blocks/popup/_visible/popup_visible.css");
 @import url("../blocks/popup/_hidden/popup_hidden.css");
+
 @import url("../blocks/popup/__form-container/popup__form-container.css");
 @import url("../blocks/popup/__add-container/popup__add-container.css");
 
