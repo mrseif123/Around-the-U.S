@@ -52,6 +52,7 @@ const elementsList = elementsContent.querySelector('.elements__list')
 const elementItem = elementsContent.querySelector('.elements__item')
 const likeButton = elementsContent.querySelector('.elements__like-btn')
 
+let currentImageElement;
 const currentCards = []
 initialCards.forEach(x => addElement(x.name, x.link))
 
@@ -103,6 +104,7 @@ profileEditBtn.addEventListener("click", function () {
 profileEditCloseBtn.addEventListener("click", function () {
   closeProfilePopup()
   hideAll(popups)
+  hideModel(currentImageElement)
 })
 
 profileForm.addEventListener("submit", function (event) {
@@ -113,7 +115,7 @@ profileForm.addEventListener("submit", function (event) {
   profileSubtitle.textContent = about.value
   closeProfilePopup()
   hideAll(popups)
-
+  hideModel(currentImageElement)
 })
 
 function openAddingPopup() {
@@ -124,6 +126,7 @@ function openAddingPopup() {
 function closeAddingPopup() {
   closeModal(popUpContainer);
   closeModal(addForm);
+  hideModel(currentImageElement)
 }
 
 addPlaceBtn.addEventListener("click", function () {
@@ -131,6 +134,7 @@ addPlaceBtn.addEventListener("click", function () {
   showModel(addForm);
   showModel(popUpContainer);
   hideModel(profileForm)
+  hideModel(currentImageElement)
 })
 
 addPlaceCloseBtn.addEventListener("click", function () {
@@ -140,6 +144,7 @@ addPlaceCloseBtn.addEventListener("click", function () {
   link.value = "";
   closeAddingPopup()
   hideAll(popups)
+  hideModel(currentImageElement)
 })
 
 addForm.addEventListener("submit", function (event) {
@@ -151,6 +156,8 @@ addForm.addEventListener("submit", function (event) {
   link.value = ""
   closeAddingPopup()
   hideAll(popups)
+  if (currentImageElement != null)
+    hideModel(currentImageElement)
 })
 
 function openImagePopup(photoElement) {
@@ -182,17 +189,27 @@ function addElement(titleValue, linkValue) {
     placeElement.remove()
   })
   const photoPopupTemplate = document.querySelector("#photo-popup-template").content;
-  const photoElement = photoPopupTemplate.querySelector('.popup__photo');
+  const photoElement = photoPopupTemplate.querySelector('.popup__photo').cloneNode(true);
+  const photoTitle = photoElement.querySelector(".popup__photo-title");
+  const photoImage = photoElement.querySelector(".popup__place-image");
+
   placeElement.querySelector(".elements__img").addEventListener("click", function (e) {
-    photoElement.querySelector(".popup__photo-title").textContent = titleValue;
-    photoElement.querySelector(".popup__place-image").src = linkValue;
+    photoTitle.textContent = titleValue;
+    photoImage.src = linkValue;
+    photoImage.alt = "photo of " + titleValue 
     popUpContainer.insertAdjacentElement("beforeend", photoElement)
-    openImagePopup(photoElement)
+    currentImageElement = photoElement
+    closeAddingPopup()
+    showModel(popUpContainer);
+    openImagePopup(currentImageElement)
+    showModel(currentImageElement)
 
     const closePlacePopup = photoElement.querySelector('.popup__img-close-btn');
-    closePlacePopup.addEventListener("click", function () {
-      closeImagePopup(photoElement)
-      photoElement.remove()
+    closePlacePopup.addEventListener("click", function (e) {
+      hideModel(currentImageElement)
+      closeImagePopup(currentImageElement)
+      closeModal(popUpContainer);
+      currentImageElement.remove()
     })
   })
   elementsList.prepend(placeElement)
