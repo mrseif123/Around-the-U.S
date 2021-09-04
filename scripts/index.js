@@ -108,8 +108,7 @@ addForm.addEventListener("submit", function (event) {
 
 closePlacePopup.addEventListener("click", function () {
   const listItem = closePlacePopup.closest(".popup__photo");
-  closeModal(listItem);
-  closeModal(popUpContainer);
+  closePhotoPopUp(listItem)
 })
 
 
@@ -138,6 +137,7 @@ function addElement(titleValue, linkValue) {
     photoImage.alt = "photo of " + titleValue
     openPhotoPopUp(photoElement);
   })
+
   elementsList.prepend(placeElement)
 }
 
@@ -162,12 +162,12 @@ function closeAddFrom() {
   closeModal(addForm);
 }
 
-function closePhotoPopUp(photoElement) {
-  closeModal(photoElement);
-  closeModal(popUpContainer);
-}
-
 function openPhotoPopUp(photoElement) {
   openModal(photoElement);
   openModal(popUpContainer);
+}
+
+function closePhotoPopUp(photoElement) {
+  closeModal(photoElement);
+  closeModal(popUpContainer);
 }
