@@ -58,8 +58,6 @@ let currentImageElement;
 const currentCards = []
 initialCards.forEach(x => addElement(x.name, x.link))
 
-const popups = [addForm, profileForm, popUpContainer]
-
 function openModal(element) {
   element.classList.add("popup_visible");
 }
