@@ -36,53 +36,11 @@
 
     <section class="elements">
       <ul class="elements__list">
-        <!-- <li class="elements__item">
-          <img class="elements__img" src="./images/grid-img-2.png" alt="A picture of yosemite park">
-          <div class="elements__description">
-            <h2 class="elements__title">Yosemite Valley</h2>
-            <button type="button" aria-label="like image" class="elements__like-btn"></button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="./images/grid-img-4.png" alt="A picture of lake lousie">
-          <div class="elements__description">
-            <h2 class="elements__title">Lake Louise</h2>
-            <button type="button" aria-label="like image" class="elements__like-btn"></button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="./images/grid-img-6.png" alt="A picture of bald mountains">
-          <div class="elements__description">
-            <h2 class="elements__title">Bald Mountains</h2>
-            <button type="button" aria-label="like image" class="elements__like-btn"></button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="./images/grid-img-3.png" alt="A picture of Latermar">
-          <div class="elements__description">
-            <h2 class="elements__title">Latermar</h2>
-            <button type="button" aria-label="like image" class="elements__like-btn"></button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="./images/grid-img-5.png" alt="A picture of Vanoise national park">
-          <div class="elements__description">
-            <h2 class="elements__title">Vanoise National Park</h2>
-            <button type="button" aria-label="like image" class="elements__like-btn"></button>
-          </div>
-        </li>
-        <li class="elements__item">
-          <img class="elements__img" src="./images/grid-img-1.png" alt="A picture of lago di braies">
-          <div class="elements__description">
-            <h2 class="elements__title">Lago di Braies</h2>
-            <button type="button" aria-label="like image" class="elements__like-btn"></button>
-          </div>
-        </li> -->
       </ul>
     </section>
 
     <section class="popup">
-      <div class="popup__form-container fade-in">
+      <div class="popup__form-container">
         <form class="form" name="edit_profile_form">
           <button type="button" aria-label="close profile editing form" class="form__close-btn"
             id="close_button_profile">
@@ -96,9 +54,10 @@
         </form>
       </div>
 
-      <div class="popup__add-container fade-in" id="add_container">
+      <div class="popup__add-container" id="add_container">
         <form class="form" name="add_place_form">
-          <button type="button" aria-label="close place addition form" class="form__close-btn" id="close_button_add">
+          <button type="button" aria-label="close place addition form" class="form__close-btn"
+            id="close_button_add">
             <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
           </button>
           <h2 class="form__title">New place</h2>
@@ -109,7 +68,7 @@
         </form>
       </div>
 
-      <div class="popup__photo fade-in">
+      <div class="popup__photo">
         <button type="button" aria-label="close place addition form" class="popup__img-close-btn" id="close_button_add">
           <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
         </button>
@@ -128,17 +87,6 @@
         </div>
       </li>
     </template>
-
-    <template id="photo-popup-template">
-      <div class="popup__photo fade-in">
-        <button type="button" aria-label="close place addition form" class="popup__img-close-btn" id="close_button_img">
-          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
-        </button>
-        <img class="popup__place-image">
-        <h2 class="popup__photo-title"></h2>
-      </div>
-    </template>
-  </main>
 
   <footer class="footer">
     <p class="footer__copyright">&copy; 2021 Seaf Aliyan</p>

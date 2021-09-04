@@ -12,7 +12,6 @@
 @import url("../blocks/popup/__place-image/popup__place-image.css");
 @import url("../blocks/popup/__photo-title/popup__photo-title.css");
 @import url("../blocks/popup/__img-close-btn/popup__img-close-btn.css");
-@import url("../blocks/fade-in/fade-in.css");
 
 @import url("../blocks/popup/_visible/popup_visible.css");
 

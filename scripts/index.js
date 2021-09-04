@@ -85,7 +85,6 @@ profileForm.addEventListener("submit", function (event) {
   profileName.textContent = name.value
   profileSubtitle.textContent = about.value
   closeModal(popUpContainer)
-  closeModal(addForm)
   closeModal(profileForm)
 })
 
@@ -102,7 +101,6 @@ addPlaceCloseBtn.addEventListener("click", function () {
   link.value = "";
   closeModal(popUpContainer)
   closeModal(addForm)
-  closeModal(profileForm)
 })
 
 addForm.addEventListener("submit", function (event) {
@@ -114,7 +112,6 @@ addForm.addEventListener("submit", function (event) {
   link.value = ""
   closeModal(popUpContainer)
   closeModal(addForm)
-  closeModal(profileForm)
 })
 
 
