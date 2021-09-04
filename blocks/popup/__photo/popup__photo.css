@@ -7,4 +7,6 @@
   margin-right: auto;
   max-width: 100vw;
   max-height: 100vh;
+  visibility: hidden;
+  opacity: 0;
 }
