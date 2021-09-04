@@ -46,7 +46,6 @@ const editProfileSubmitBtn = document.getElementById("form__profile-submit-butto
 const addElementSubmitBtn = document.getElementById("form__place-submit-button")
 const addPlaceCloseBtn = document.getElementById('close_button_add');
 
-
 const elementsContent = document.querySelector('.elements')
 const elementsList = elementsContent.querySelector('.elements__list')
 const elementItem = elementsContent.querySelector('.elements__item')
@@ -69,13 +68,11 @@ function closeModal(element) {
 profileEditBtn.addEventListener("click", function () {
   formNameInput.value = profileName.textContent
   formAboutInput.value = profileSubtitle.textContent
-  openModal(popUpContainer)
-  openModal(profileForm)
+  openProfileForm();
 })
 
 profileEditCloseBtn.addEventListener("click", function () {
-  closeModal(popUpContainer)
-  closeModal(profileForm)
+  closeProfileForm();
 })
 
 profileForm.addEventListener("submit", function (event) {
@@ -84,23 +81,20 @@ profileForm.addEventListener("submit", function (event) {
   const about = document.getElementById("about")
   profileName.textContent = name.value
   profileSubtitle.textContent = about.value
-  closeModal(popUpContainer)
-  closeModal(profileForm)
+  closeProfileForm();
 })
 
 
 addPlaceBtn.addEventListener("click", function () {
-  openModal(popUpContainer)
-  openModal(addForm)
-  })
+  openAddFrom();
+})
 
 addPlaceCloseBtn.addEventListener("click", function () {
   const title = document.getElementById("title");
   const link = document.getElementById("link");
   title.value = "";
   link.value = "";
-  closeModal(popUpContainer)
-  closeModal(addForm)
+  closeAddFrom();
 })
 
 addForm.addEventListener("submit", function (event) {
@@ -110,10 +104,25 @@ addForm.addEventListener("submit", function (event) {
   addElement(title.value, link.value);
   title.value = ""
   link.value = ""
-  closeModal(popUpContainer)
-  closeModal(addForm)
+  closeAddFrom();
 })
 
+
+
+function openProfileForm() {
+  openModal(popUpContainer);
+  openModal(profileForm);
+}
+
+function closeProfileForm() {
+  closeModal(popUpContainer);
+  closeModal(profileForm);
+}
+
+function openAddFrom() {
+  openModal(popUpContainer);
+  openModal(addForm);
+}
 
 function addElement(titleValue, linkValue) {
   const elementTemplate = document.querySelector("#element-template").content;
@@ -138,14 +147,27 @@ function addElement(titleValue, linkValue) {
     photoTitle.textContent = titleValue;
     photoImage.src = linkValue;
     photoImage.alt = "photo of " + titleValue
-    openModal(photoElement)
-    openModal(popUpContainer)
+    openPhotoPopUp(photoElement);
 
     const closePlacePopup = photoElement.querySelector('.popup__img-close-btn');
     closePlacePopup.addEventListener("click", function (e) {
-      closeModal(photoElement)
-      closeModal(popUpContainer)
+      closePhotoPopUp(photoElement);
     })
   })
   elementsList.prepend(placeElement)
+}
+
+function closePhotoPopUp(photoElement) {
+  closeModal(photoElement);
+  closeModal(popUpContainer);
+}
+
+function openPhotoPopUp(photoElement) {
+  openModal(photoElement);
+  openModal(popUpContainer);
+}
+
+function closeAddFrom() {
+  closeModal(popUpContainer);
+  closeModal(addForm);
 }
