@@ -5,7 +5,7 @@
   transform: rotate(45deg);
   position: relative;
   top: -10px;
-  left: 53%;
+  left: 100%;
   cursor: pointer;
   margin-top: -600px;
 }
@@ -16,7 +16,6 @@
 
 @media screen and (max-width: 525px) {
   .popup__img-close-btn {
-    top: -50px;
     right: -5px;
   }
 }

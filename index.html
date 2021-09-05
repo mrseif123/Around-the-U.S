@@ -39,8 +39,8 @@
       </ul>
     </section>
 
-    <section class="popup">
-      <div class="popup__form-container">
+    <div class="popup popup__form-container" id="form_popup">
+      <div class="popup__container">
         <form class="form" name="edit_profile_form">
           <button type="button" aria-label="close profile editing form" class="form__close-btn"
             id="close_button_profile">
@@ -53,11 +53,12 @@
             id="form__profile-submit-button">Save</button>
         </form>
       </div>
+    </div>
 
-      <div class="popup__add-container" id="add_container">
+    <div class="popup popup__add-container" id='add_popup'>
+      <div class="popup__container">
         <form class="form" name="add_place_form">
-          <button type="button" aria-label="close place addition form" class="form__close-btn"
-            id="close_button_add">
+          <button type="button" aria-label="close place addition form" class="form__close-btn" id="close_button_add">
             <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
           </button>
           <h2 class="form__title">New place</h2>
@@ -67,15 +68,17 @@
             id="form__place-submit-button">Create</button>
         </form>
       </div>
+    </div>
 
-      <div class="popup__photo">
+    <div class="popup popup__photo" id="photo_popup">
+      <div class="popup__container_type_image">
         <button class="popup__img-close-btn" type="button" aria-label="close place addition form">
           <img class="popup__close-img" src="./images/profile-add-icon.svg" alt="close button">
         </button>
         <img class="popup__place-image" src="./images/grid-img-1.png" alt="empty photo">
         <h2 class="popup__photo-title">Yosemite Valley</h2>
       </div>
-    </section>
+    </div>
 
     <template id="element-template">
       <li class="elements__item">
@@ -94,4 +97,5 @@
   </footer>
   <script src="scripts/index.js"></script>
 </body>
+
 </html>

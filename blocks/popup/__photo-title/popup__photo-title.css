@@ -7,9 +7,3 @@
   line-height: 15px;
   background-color: transparent;
 }
-
-@media screen and (max-width: 880px) {
-  .popup__photo-title {
-    margin-left: 40px;
-  }
-}
