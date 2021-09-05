@@ -107,7 +107,7 @@ addForm.addEventListener("submit", function (event) {
 })
 
 closePlacePopup.addEventListener("click", function () {
-  const listItem = closePlacePopup.closest(".popup__photo");
+  const listItem = closePlacePopup.closest(".photo-container");
   closePhotoPopUp(listItem)
 })
 
