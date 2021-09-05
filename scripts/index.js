@@ -48,6 +48,8 @@ const editProfileSubmitBtn = document.getElementById("form__profile-submit-butto
 const addElementSubmitBtn = document.getElementById("form__place-submit-button")
 const addPlaceCloseBtn = document.getElementById('close_button_add');
 
+const photoPop = document.getElementById("photo_popup");
+
 const elementsContent = document.querySelector('.elements')
 const elementsList = elementsContent.querySelector('.elements__list')
 const elementItem = elementsContent.querySelector('.elements__item')
@@ -107,8 +109,7 @@ addForm.addEventListener("submit", function (event) {
 })
 
 closePlacePopup.addEventListener("click", function () {
-  const listItem = closePlacePopup.closest(".photo-container");
-  closePhotoPopUp(listItem)
+  closePhotoPopUp()
 })
 
 
@@ -135,15 +136,13 @@ function addElement(titleValue, linkValue) {
     photoTitle.textContent = titleValue;
     photoImage.src = linkValue;
     photoImage.alt = "photo of " + titleValue
-    openPhotoPopUp(photoElement);
+    openPhotoPopUp();
   })
-
   elementsList.prepend(placeElement)
 }
 
 
 function openProfileForm() {
-  // openModal(popUpContainer);
   openModal(profileForm);
 }
 
@@ -159,10 +158,10 @@ function closeAddFrom() {
   closeModal(addForm);
 }
 
-function openPhotoPopUp(photoElement) {
-  openModal(photoElement);
+function openPhotoPopUp() {
+  openModal(photoPop);
 }
 
-function closePhotoPopUp(photoElement) {
-  closeModal(photoElement);
+function closePhotoPopUp() {
+  closeModal(photoPop);
 }
