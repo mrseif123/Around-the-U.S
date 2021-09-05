@@ -33,7 +33,6 @@ const profileName = profileText.querySelector('.profile__name');
 const profileSubtitle = profileText.querySelector('.profile__subtitle');
 const addPlaceBtn = profileContent.querySelector('.profile__add-btn');
 
-// const popUpContainer = document.querySelector('.popup');
 const addForm = document.getElementById("add_popup")
 
 const formNameInput = document.getElementById("fullName")
@@ -41,7 +40,6 @@ const formAboutInput = document.getElementById("about")
 const formName = document.getElementById("fullName")
 const formAbout = document.getElementById("about")
 
-// const profileForm = popUpContainer.querySelector(".popup__form-container")
 const profileForm = document.getElementById("form_popup")
 const profileEditCloseBtn = profileForm.querySelector('.form__close-btn');
 const editProfileSubmitBtn = document.getElementById("form__profile-submit-button")
@@ -129,7 +127,6 @@ function addElement(titleValue, linkValue) {
     placeElement.remove()
   })
 
-  // const photoElement = popUpContainer.querySelector('.popup__photo');
   const photoElement = document.getElementById('photo_popup');
   const photoTitle = photoElement.querySelector(".popup__photo-title");
   const photoImage = photoElement.querySelector(".popup__place-image");
@@ -151,26 +148,21 @@ function openProfileForm() {
 }
 
 function closeProfileForm() {
-  // closeModal(popUpContainer);
   closeModal(profileForm);
 }
 
 function openAddFrom() {
-  // openModal(popUpContainer);
   openModal(addForm);
 }
 
 function closeAddFrom() {
-  // closeModal(popUpContainer);
   closeModal(addForm);
 }
 
 function openPhotoPopUp(photoElement) {
   openModal(photoElement);
-  // openModal(popUpContainer);
 }
 
 function closePhotoPopUp(photoElement) {
   closeModal(photoElement);
-  // closeModal(popUpContainer);
 }

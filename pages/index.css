@@ -17,7 +17,7 @@
 @import url("../blocks/popup/_visible/popup_visible.css");
 @import url("../blocks/popup/__close-img/popup__close-img.css");
 
-@import url("../blocks/popup/__form-container/popup__form-container.css");
-@import url("../blocks/popup/__add-container/popup__add-container.css");
+@import url("../blocks/form-container/form-container.css");
+@import url("../blocks/add-container/add-container.css");
 
 @import url("../blocks/footer/footer.css");
