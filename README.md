@@ -8,7 +8,8 @@
 * Basic JavaScript.
 * Forms & validation using JavaScript.
 * Pop-ups.
-* Figma.
+* Basic animations.
+* Figma design.
 
 My first attempt using JavaScript to manipulate DOM objects.
 
