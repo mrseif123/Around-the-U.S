@@ -7,7 +7,7 @@ const profileName = profileText.querySelector('.profile__name');
 const profileSubtitle = profileText.querySelector('.profile__subtitle');
 const addPlaceBtn = profileContent.querySelector('.profile__add-btn');
 
-const addForm = document.getElementById("add_popup")
+const addCardFrom = document.getElementById("add_popup")
 
 const formNameInput = document.getElementById("fullName")
 const formAboutInput = document.getElementById("about")
@@ -37,14 +37,25 @@ const popups = document.querySelectorAll(".popup")
 const inputListProfile = Array.from(profileForm.querySelectorAll(".form__field"));
 const buttonElementProfile = profileForm.querySelector(".form__submit-btn")
 
-const inputListAdd = Array.from(addForm.querySelectorAll(".form__field"))
-const buttonElementAdd = addForm.querySelector(".form__submit-btn")
+const inputListAdd = Array.from(addCardFrom
+.querySelectorAll(".form__field"))
+const buttonElementAdd = addCardFrom.querySelector(".form__submit-btn")
 
 const titleAdd = document.getElementById("title");
 const linkAdd = document.getElementById("link");
 
 const containersClasses = ["add-container", "form-container", "photo-container"]
-const popupsObjects = [profileForm, addForm, popupPhoto]
+const popupsObjects = [profileForm, addCardFrom
+, popupPhoto]
+
+const validationConfig = {
+  formSelector: "form",
+  inputSelector: ".form__field",
+  submitButtonSelector: ".form__submit-btn",
+  inactiveButtonClass: "form__submit-btn_inactive",
+  inputErrorClass: "form__field_invalid",
+  errorClass: "form__input-error_active",
+}
 
 initialCards.forEach(card => addElement(card.name, card.link))
 
@@ -87,19 +98,19 @@ addPlaceBtn.addEventListener("click", function () {
 addPlaceCloseBtn.addEventListener("click", function () {
   titleAdd.value = "";
   linkAdd.value = "";
-  closeAddFrom();
+  closeAddCardForm();
 })
 
-addForm.addEventListener("submit", function (event) {
+addCardFrom.addEventListener("submit", function (event) {
   event.preventDefault()
   addElement(title.value, link.value);
   titleAdd.value = ""
   linkAdd.value = ""
-  closeAddFrom();
+  closeAddCardForm();
 })
 
 closePlacePopup.addEventListener("click", function () {
-  closepopupPhotoUp()
+  closePopupPhoto()
 })
 
 function createCard (titleValue, linkValue){
@@ -120,7 +131,7 @@ function createCard (titleValue, linkValue){
     photoTitle.textContent = titleValue;
     photoImage.src = linkValue;
     photoImage.alt = "photo of " + titleValue
-    openpopupPhotoUp();
+    openPopupPhoto();
   })
   return placeElement
 }
@@ -138,18 +149,18 @@ function closeProfileForm() {
 }
 
 function openAddCardForm() {
-  openModal(addForm);
+  openModal(addCardFrom);
 }
 
-function closeAddFrom() {
-  closeModal(addForm);
+function closeAddCardForm() {
+  closeModal(addCardFrom);
 }
 
-function openpopupPhotoUp() {
+function openPopupPhoto() {
   openModal(popupPhoto);
 }
 
-function closepopupPhotoUp() {
+function closePopupPhoto() {
   closeModal(popupPhoto);
 }
 
@@ -170,4 +181,4 @@ function mouseHandler(evt) {
     popupsObjects.forEach(popup => closeOpenedModals(popup))
 }
 
-enableValidation();
+enableValidation(validationConfig);
