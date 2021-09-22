@@ -22,7 +22,7 @@ class FormValidation {
     errorElement.textContent = "";
   };
 
-  checkInputValidity(formElement, inputElement) {
+  _checkInputValidity(formElement, inputElement) {
     if (!inputElement.validity.valid) {
       this._showInputError(formElement, inputElement, inputElement.validationMessage);
     } else {
@@ -52,8 +52,8 @@ class FormValidation {
     this.toggleButtonState(inputList, buttonElement)
 
     inputList.forEach((inputElement) => {
-      inputElement.addEventListener("input", function () {
-        this.checkInputValidity(formElement, inputElement);
+      inputElement.addEventListener("input", (event) => {
+        this._checkInputValidity(formElement, inputElement);
         this.toggleButtonState(inputList, buttonElement);
       });
     });

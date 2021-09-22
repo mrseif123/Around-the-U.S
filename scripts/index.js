@@ -113,25 +113,6 @@ closePlacePopup.addEventListener("click", function () {
 })
 
 function createCard(titleValue, linkValue) {
-  // const placeElement = elementTemplate.querySelector('.elements__item').cloneNode(true);
-  // placeElement.querySelector(".elements__title").textContent = titleValue;
-  // placeElement.querySelector(".elements__img").src = linkValue;
-  // const likeButton = placeElement.querySelector(".elements__like-btn")
-
-  // likeButton.addEventListener("click", function (e) {
-  //   likeButton.classList.toggle("elements__like-btn_active");
-  // })
-
-  // placeElement.querySelector(".elements__delete-btn").addEventListener("click", function (e) {
-  //   placeElement.remove()
-  // })
-
-  // placeElement.querySelector(".elements__img").addEventListener("click", function (e) {
-  //   photoTitle.textContent = titleValue;
-  //   photoImage.src = linkValue;
-  //   photoImage.alt = "photo of " + titleValue
-  //   openPopupPhoto();
-  // })
   const newCard = new Card(titleValue, linkValue)
   return newCard.generateCard()
 }
