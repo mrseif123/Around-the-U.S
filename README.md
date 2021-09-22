@@ -1,4 +1,4 @@
-# Projects 4-5-6: Around The U.S.
+# Projects 4-5-6-7: Around The U.S.
 
 ## Overview
 
