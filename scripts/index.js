@@ -1,3 +1,12 @@
+import {
+  FormValidation,
+} from "./FormValidation.js";
+
+import {
+  Card
+} from "./Card.js"
+
+const myValidator = new FormValidation()
 const container = document.querySelectorAll('#body');
 
 const profileContent = document.querySelector('.profile');
@@ -38,24 +47,14 @@ const inputListProfile = Array.from(profileForm.querySelectorAll(".form__field")
 const buttonElementProfile = profileForm.querySelector(".form__submit-btn")
 
 const inputListAdd = Array.from(addCardFrom
-.querySelectorAll(".form__field"))
+  .querySelectorAll(".form__field"))
 const buttonElementAdd = addCardFrom.querySelector(".form__submit-btn")
 
 const titleAdd = document.getElementById("title");
 const linkAdd = document.getElementById("link");
 
 const containersClasses = ["add-container", "form-container", "photo-container"]
-const popupsObjects = [profileForm, addCardFrom
-, popupPhoto]
-
-const validationConfig = {
-  formSelector: "form",
-  inputSelector: ".form__field",
-  submitButtonSelector: ".form__submit-btn",
-  inactiveButtonClass: "form__submit-btn_inactive",
-  inputErrorClass: "form__field_invalid",
-  errorClass: "form__input-error_active",
-}
+const popupsObjects = [profileForm, addCardFrom, popupPhoto]
 
 initialCards.forEach(card => addElement(card.name, card.link))
 
@@ -75,7 +74,7 @@ function closeModal(element) {
 profileEditBtn.addEventListener("click", function () {
   formNameInput.value = profileName.textContent
   formAboutInput.value = profileSubtitle.textContent
-  toggleButtonState(inputListProfile, buttonElementProfile)
+  myValidator.toggleButtonState(inputListProfile, buttonElementProfile)
   openProfileForm();
 })
 
@@ -92,7 +91,7 @@ profileForm.addEventListener("submit", function (event) {
 
 addPlaceBtn.addEventListener("click", function () {
   openAddCardForm();
-  toggleButtonState(inputListAdd, buttonElementAdd)
+  myValidator.toggleButtonState(inputListAdd, buttonElementAdd)
 })
 
 addPlaceCloseBtn.addEventListener("click", function () {
@@ -113,27 +112,28 @@ closePlacePopup.addEventListener("click", function () {
   closePopupPhoto()
 })
 
-function createCard (titleValue, linkValue){
-  const placeElement = elementTemplate.querySelector('.elements__item').cloneNode(true);
-  placeElement.querySelector(".elements__title").textContent = titleValue;
-  placeElement.querySelector(".elements__img").src = linkValue;
-  const likeButton = placeElement.querySelector(".elements__like-btn")
+function createCard(titleValue, linkValue) {
+  // const placeElement = elementTemplate.querySelector('.elements__item').cloneNode(true);
+  // placeElement.querySelector(".elements__title").textContent = titleValue;
+  // placeElement.querySelector(".elements__img").src = linkValue;
+  // const likeButton = placeElement.querySelector(".elements__like-btn")
 
-  likeButton.addEventListener("click", function (e) {
-    likeButton.classList.toggle("elements__like-btn_active");
-  })
+  // likeButton.addEventListener("click", function (e) {
+  //   likeButton.classList.toggle("elements__like-btn_active");
+  // })
 
-  placeElement.querySelector(".elements__delete-btn").addEventListener("click", function (e) {
-    placeElement.remove()
-  })
+  // placeElement.querySelector(".elements__delete-btn").addEventListener("click", function (e) {
+  //   placeElement.remove()
+  // })
 
-  placeElement.querySelector(".elements__img").addEventListener("click", function (e) {
-    photoTitle.textContent = titleValue;
-    photoImage.src = linkValue;
-    photoImage.alt = "photo of " + titleValue
-    openPopupPhoto();
-  })
-  return placeElement
+  // placeElement.querySelector(".elements__img").addEventListener("click", function (e) {
+  //   photoTitle.textContent = titleValue;
+  //   photoImage.src = linkValue;
+  //   photoImage.alt = "photo of " + titleValue
+  //   openPopupPhoto();
+  // })
+  const newCard = new Card(titleValue, linkValue)
+  return newCard.generateCard()
 }
 
 function addElement(titleValue, linkValue) {
@@ -156,11 +156,11 @@ function closeAddCardForm() {
   closeModal(addCardFrom);
 }
 
-function openPopupPhoto() {
+export function openPopupPhoto() {
   openModal(popupPhoto);
 }
 
-function closePopupPhoto() {
+export function closePopupPhoto() {
   closeModal(popupPhoto);
 }
 
@@ -181,4 +181,4 @@ function mouseHandler(evt) {
     popupsObjects.forEach(popup => closeOpenedModals(popup))
 }
 
-enableValidation(validationConfig);
+myValidator.enableValidation();
