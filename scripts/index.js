@@ -14,8 +14,6 @@ const validationConfig = {
   errorClass: "form__input-error_active",
 }
 
-const container = document.querySelectorAll('#body');
-
 const profileContent = document.querySelector('.profile');
 const profileEditBtn = profileContent.querySelector('.profile__edit-btn');
 const profileText = profileContent.querySelector('.profile__info');
@@ -39,17 +37,7 @@ const popupPhoto = document.getElementById("photo_popup");
 
 const elementsContent = document.querySelector('.elements')
 const elementsList = elementsContent.querySelector('.elements__list')
-const elementItem = elementsContent.querySelector('.elements__item')
-const likeButton = elementsContent.querySelector('.elements__like-btn')
 const closePlacePopup = document.querySelector('.popup__img-close-btn');
-const popups = document.querySelectorAll(".popup")
-
-const inputListProfile = Array.from(profileForm.querySelectorAll(".form__field"));
-const buttonElementProfile = profileForm.querySelector(".form__submit-btn")
-
-const inputListAdd = Array.from(addCardFrom
-  .querySelectorAll(".form__field"))
-const buttonElementAdd = addCardFrom.querySelector(".form__submit-btn")
 
 const titleAdd = document.getElementById("title");
 const linkAdd = document.getElementById("link");
