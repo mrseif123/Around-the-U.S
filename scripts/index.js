@@ -6,7 +6,14 @@ import {
   Card
 } from "./Card.js"
 
-const myValidator = new FormValidation()
+const validationConfig = {
+  inputSelector: ".form__field",
+  submitButtonSelector: ".form__submit-btn",
+  inactiveButtonClass: "form__submit-btn_inactive",
+  inputErrorClass: "form__field_invalid",
+  errorClass: "form__input-error_active",
+}
+
 const container = document.querySelectorAll('#body');
 
 const profileContent = document.querySelector('.profile');
@@ -25,16 +32,10 @@ const formAbout = document.getElementById("about")
 
 const profileForm = document.getElementById("form_popup")
 const profileEditCloseBtn = profileForm.querySelector('.form__close-btn');
-const editProfileSubmitBtn = document.getElementById("form__profile-submit-button")
 
-const elementTemplate = document.querySelector("#element-template").content;
-
-const addElementSubmitBtn = document.getElementById("form__place-submit-button")
 const addPlaceCloseBtn = document.getElementById('close_button_add');
 
 const popupPhoto = document.getElementById("photo_popup");
-const photoTitle = popupPhoto.querySelector(".popup__photo-title");
-const photoImage = popupPhoto.querySelector(".popup__place-image");
 
 const elementsContent = document.querySelector('.elements')
 const elementsList = elementsContent.querySelector('.elements__list')
@@ -70,11 +71,9 @@ function closeModal(element) {
   element.classList.remove("popup_visible");
 }
 
-
 profileEditBtn.addEventListener("click", function () {
   formNameInput.value = profileName.textContent
   formAboutInput.value = profileSubtitle.textContent
-  myValidator.toggleButtonState(inputListProfile, buttonElementProfile)
   openProfileForm();
 })
 
@@ -91,7 +90,6 @@ profileForm.addEventListener("submit", function (event) {
 
 addPlaceBtn.addEventListener("click", function () {
   openAddCardForm();
-  myValidator.toggleButtonState(inputListAdd, buttonElementAdd)
 })
 
 addPlaceCloseBtn.addEventListener("click", function () {
@@ -113,7 +111,9 @@ closePlacePopup.addEventListener("click", function () {
 })
 
 function createCard(titleValue, linkValue) {
-  const newCard = new Card(titleValue, linkValue)
+  const newCard = new Card(titleValue, linkValue, {
+    handleCardClick: openPopupPhoto
+  })
   return newCard.generateCard()
 }
 
@@ -137,11 +137,11 @@ function closeAddCardForm() {
   closeModal(addCardFrom);
 }
 
-export function openPopupPhoto() {
+function openPopupPhoto() {
   openModal(popupPhoto);
 }
 
-export function closePopupPhoto() {
+function closePopupPhoto() {
   closeModal(popupPhoto);
 }
 
@@ -162,4 +162,13 @@ function mouseHandler(evt) {
     popupsObjects.forEach(popup => closeOpenedModals(popup))
 }
 
-myValidator.enableValidation();
+
+function validateForms() {
+  const formList = Array.from(document.querySelectorAll("form"));
+  formList.forEach((formElement) => {
+    const currentFormValidator = new FormValidation(validationConfig, formElement)
+    currentFormValidator.enableValidation();
+  })
+}
+
+validateForms()

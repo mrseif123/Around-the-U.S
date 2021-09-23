@@ -1,12 +1,10 @@
-import {
-  openPopupPhoto,
-  closePopupPhoto
-} from "./index.js"
-
 export class Card {
-  constructor(title, link) {
+  constructor(title, link, {
+    handleCardClick
+  }) {
     this._title = title
     this._link = link
+    this._handleCardClick = handleCardClick
   }
 
   _getTemplate() {
@@ -36,11 +34,11 @@ export class Card {
     const popupPhoto = document.getElementById("photo_popup");
     const photoTitle = popupPhoto.querySelector(".popup__photo-title");
     const photoImage = popupPhoto.querySelector(".popup__place-image");
-    placeElement.querySelector(".elements__img").addEventListener("click", function (e) {
+    placeElement.querySelector(".elements__img").addEventListener("click", () => {
       photoTitle.textContent = imgTitle;
       photoImage.src = imgLink;
-      photoImage.alt = "photo of " + imgTitle
-      openPopupPhoto();
+      photoImage.alt = "photo of " + imgTitle;
+      this._handleCardClick()
     })
   }
 
