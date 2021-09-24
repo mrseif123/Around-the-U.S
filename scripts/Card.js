@@ -31,15 +31,9 @@ export class Card {
   }
 
   _addImage(placeElement, imgLink, imgTitle) {
-    const popupPhoto = document.getElementById("photo_popup");
-    const photoTitle = popupPhoto.querySelector(".popup__photo-title");
-    const photoImage = popupPhoto.querySelector(".popup__place-image");
-    placeElement.querySelector(".elements__img").addEventListener("click", () => {
-      photoTitle.textContent = imgTitle;
-      photoImage.src = imgLink;
-      photoImage.alt = "photo of " + imgTitle;
-      this._handleCardClick()
-    })
+    placeElement.querySelector('.elements__img').addEventListener('click', () => {
+      this._handleCardClick(imgLink, imgTitle);
+    });
   }
 
   generateCard() {

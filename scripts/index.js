@@ -43,7 +43,6 @@ const titleAdd = document.getElementById("title");
 const linkAdd = document.getElementById("link");
 
 const containersClasses = ["add-container", "form-container", "photo-container"]
-const popupsObjects = [profileForm, addCardFrom, popupPhoto]
 
 initialCards.forEach(card => addElement(card.name, card.link))
 
@@ -125,7 +124,13 @@ function closeAddCardForm() {
   closeModal(addCardFrom);
 }
 
-function openPopupPhoto() {
+function openPopupPhoto(imgLink, imgTitle) {
+  const popupPhoto = document.getElementById("photo_popup");
+  const photoTitle = popupPhoto.querySelector(".popup__photo-title");
+  const photoImage = popupPhoto.querySelector(".popup__place-image");
+  photoTitle.textContent = imgTitle;
+  photoImage.src = imgLink;
+  photoImage.alt = "photo of " + imgTitle;
   openModal(popupPhoto);
 }
 
