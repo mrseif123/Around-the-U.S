@@ -141,13 +141,13 @@ function closeOpenedModals(openedModal) {
 
 function keyHandler(evt) {
   if (evt.key === "Escape") {
-    popupsObjects.forEach(popup => closeOpenedModals(popup))
+    closeModal(document.querySelector('.popup_visible'));
   }
 }
 
 function mouseHandler(evt) {
   if (containersClasses.some(popupContainer => evt.target.classList.contains(popupContainer)))
-    popupsObjects.forEach(popup => closeOpenedModals(popup))
+    closeModal(document.querySelector('.popup_visible'));
 }
 
 
