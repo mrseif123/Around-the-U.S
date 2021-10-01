@@ -19,8 +19,6 @@ import {
   profileSubtitle,
   nameField,
   subtitleField,
-  titleField,
-  linkField,
   editButton,
   addButton
 } from "./constants.js"
