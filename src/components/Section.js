@@ -9,7 +9,7 @@ export default class Section {
   }
 
   setItems(element) {
-    this._container.append(element);
+    this._container.prepend(element);
   }
 
   clear() {

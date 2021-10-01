@@ -1,6 +1,3 @@
-import {
-  initialCards
-} from "../scripts/initial-cards";
 export default class Card {
   constructor({
     card,
@@ -13,7 +10,6 @@ export default class Card {
   }
 
   _deletePlace(e) {
-    delete initialCards[this._name]
     e.target.parentElement.remove();
   }
 

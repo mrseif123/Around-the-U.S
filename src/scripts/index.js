@@ -25,18 +25,22 @@ import {
   addButton
 } from "./constants.js"
 
-const placeCards = new Section({
+
+function createCardObj(item) {
+  const newPlace = new Card({
+      card: item,
+      handleCardClick: (name, link) => {
+        imagePreviewPopup.open(name, link);
+      },
+    },
+    "#element-template"
+  );
+  return newPlace
+}
+export const placeCards = new Section({
     items: initialCards,
     renderer: (item) => {
-      const newPlace = new Card({
-          card: item,
-          handleCardClick: (name, link) => {
-            imagePreviewPopup.open(name, link);
-          },
-        },
-        "#element-template"
-      );
-      const cardElement = newPlace.createCard();
+      const cardElement = createCardObj(item).createCard()
       placeCards.setItems(cardElement);
     },
   },
@@ -77,17 +81,14 @@ profileEditor.setEventListeners();
 // initialize image adder editor popup
 const imageAdderPopup = new PopupWithForm(
   ".add-container",
-  () => {
-    const name = titleField.value
-    const link = linkField.value
+  (data) => {
     const tmp = {
-      name,
-      link
+      name: data.title_input_field,
+      link: data.link_input_field
     }
-    initialCards.unshift(tmp)
+    const newPlace = createCardObj(tmp)
     imageAdderPopup.close();
-    // placeCards.renderItems();
-    placeCards.addItem(createCard(data));
+    placeCards.setItems(newPlace.createCard());
   }
 );
 
