@@ -15,7 +15,6 @@ import '../vendor/fonts.css';
 
 import {
   validationConfig,
-
   profileName,
   profileSubtitle,
   nameField,
@@ -23,12 +22,8 @@ import {
   titleField,
   linkField,
   editButton,
-  addButton,
-
-
+  addButton
 } from "./constants.js"
-
-
 
 const placeCards = new Section({
     items: initialCards,
@@ -70,7 +65,9 @@ imagePreviewPopup.setEventListeners();
 const profileEditor = new PopupWithForm(
   ".form-container",
   () => {
-    userInfo.setUserInfo()
+    const profileNameContent = document.querySelector(".form__field_name").value;
+    const profileSubtitleContent = document.querySelector(".form__field_about").value;
+    userInfo.setUserInfo(profileNameContent, profileSubtitleContent)
     profileEditor.close();
   }
 );
@@ -89,7 +86,8 @@ const imageAdderPopup = new PopupWithForm(
     }
     initialCards.unshift(tmp)
     imageAdderPopup.close();
-    placeCards.renderItems();
+    // placeCards.renderItems();
+    placeCards.addItem(createCard(data));
   }
 );
 

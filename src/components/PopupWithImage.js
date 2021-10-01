@@ -12,12 +12,6 @@ export default class PopupWithImage extends Popup {
     super.open();
   }
 
-  close() {
-    this._popup.classList.remove("popup_visible");
-    document.removeEventListener("keydown", this._handleEscClose);
-    document.removeEventListener("click", this._handleOverlayClose);
-  }
-
   setEventListeners() {
     const closeButton = this._popup.querySelector(".popup__img-close-btn");
     closeButton.addEventListener("click", () => {

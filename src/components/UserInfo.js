@@ -16,8 +16,8 @@ export default class UserInfo {
     return data;
   }
 
-  setUserInfo() {
-    this._profileName.textContent = document.querySelector(".form__field_name").value;
-    this._profileTitle.textContent = document.querySelector(".form__field_about").value;
+  setUserInfo(name, title) {
+    this._profileName.textContent = name
+    this._profileTitle.textContent = title
   }
 }
