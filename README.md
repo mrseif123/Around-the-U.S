@@ -1,4 +1,4 @@
-# [Projects 4-9: Around The U.S.](https://mrseif123.github.io/Web-Project-4-5-6)
+# [Projects 4-9: Around The U.S.](https://mrseif123.github.io/Web-Project-4-9)
 
 ## Overview
 
@@ -13,4 +13,4 @@
 * Basic animations.
 * Figma design.
 
-[A direct link (GitHub Pages)](https://mrseif123.github.io/Web-Project-4-5-6)
+[A direct link (GitHub Pages)](https://mrseif123.github.io/Web-Project-4-9)
