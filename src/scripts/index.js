@@ -66,10 +66,10 @@ imagePreviewPopup.setEventListeners();
 // initialize profile editor popup
 const profileEditor = new PopupWithForm(
   ".form-container",
-  () => {
-    const profileNameContent = document.querySelector(".form__field_name").value;
-    const profileSubtitleContent = document.querySelector(".form__field_about").value;
-    userInfo.setUserInfo(profileNameContent, profileSubtitleContent)
+  (data) => {
+    // const profileNameContent = document.querySelector(".form__field_name").value;
+    // const profileSubtitleContent = document.querySelector(".form__field_about").value;
+    userInfo.setUserInfo(data.name_input_field, data.about_input_field)
     profileEditor.close();
   }
 );
