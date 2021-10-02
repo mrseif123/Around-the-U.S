@@ -2,6 +2,8 @@
 
 ## Overview
 
+* OOP principles: polymorphism, inheritance, encapsulation.
+* Modular JavaScript: destructing syntax, arrow functions and more.
 * Flex box.
 * Grid layout.
 * Responsive design.
