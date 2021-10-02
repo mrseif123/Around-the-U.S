@@ -67,8 +67,6 @@ imagePreviewPopup.setEventListeners();
 const profileEditor = new PopupWithForm(
   ".form-container",
   (data) => {
-    // const profileNameContent = document.querySelector(".form__field_name").value;
-    // const profileSubtitleContent = document.querySelector(".form__field_about").value;
     userInfo.setUserInfo(data.name_input_field, data.about_input_field)
     profileEditor.close();
   }
