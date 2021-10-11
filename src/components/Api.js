@@ -3,7 +3,6 @@ export default class Api {
     baseUrl,
     authorization
   }) {
-    // constructor body
     this._baseUrl = baseUrl;
     this._auth = authorization;
   }
@@ -17,27 +16,29 @@ export default class Api {
     }
   }
 
-  getUserInfo() {
-    return fetch(this._baseUrl + '/users/me', {
+  async getUserInfo() {
+    const res = await fetch(this._baseUrl + '/users/me', {
       headers: {
         authorization: this._auth,
       },
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 
-  getGroupCards() {
-    return fetch(this._baseUrl + '/cards', {
+  async getGroupCards() {
+    const res = await fetch(this._baseUrl + '/cards', {
       headers: {
         authorization: this._auth,
       },
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 
-  updateProfile({
+  async updateProfile({
     name,
     about
   }) {
-    return fetch(this._baseUrl + '/users/me', {
+    const res = await fetch(this._baseUrl + '/users/me', {
       method: 'PATCH',
       headers: {
         authorization: this._auth,
@@ -47,13 +48,14 @@ export default class Api {
         name: name,
         about: about,
       }),
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 
-  updateAvatar({
+  async updateAvatar({
     avatar
   }) {
-    return fetch(this._baseUrl + '/users/me/avatar', {
+    const res = await fetch(this._baseUrl + '/users/me/avatar', {
       method: 'PATCH',
       headers: {
         authorization: this._auth,
@@ -62,14 +64,15 @@ export default class Api {
       body: JSON.stringify({
         avatar: avatar
       }),
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 
-  addCard({
+  async addCard({
     name,
     link
   }) {
-    return fetch(this._baseUrl + '/cards', {
+    const res = await fetch(this._baseUrl + '/cards', {
       method: 'POST',
       headers: {
         authorization: this._auth,
@@ -79,36 +82,40 @@ export default class Api {
         name,
         link,
       }),
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 
-  likeCard(cardId) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+  async likeCard(cardId) {
+    const res = await fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: 'PUT',
       headers: {
         authorization: this._auth,
         'Content-Type': 'application/json',
       },
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 
-  removeLike(cardId) {
-    return fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
+  async removeLike(cardId) {
+    const res = await fetch(`${this._baseUrl}/cards/likes/${cardId}`, {
       method: 'DELETE',
       headers: {
         authorization: this._auth,
         'Content-Type': 'application/json',
       },
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 
-  deleteCard(cardId) {
-    return fetch(`${this._baseUrl}/cards/${cardId}`, {
+  async deleteCard(cardId) {
+    const res = await fetch(`${this._baseUrl}/cards/${cardId}`, {
       method: 'DELETE',
       headers: {
         authorization: this._auth,
         'Content-Type': 'application/json',
       },
-    }).then(res => this._checkResponse(res));
+    });
+    return this._checkResponse(res);
   }
 }

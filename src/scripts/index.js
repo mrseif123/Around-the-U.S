@@ -162,7 +162,6 @@ profileEditor.setEventListeners();
 confirmDeletePopup.setEventListeners();
 avatarUpdatePopup.setEventListeners();
 
-
 api
   // fetch and store user data
   .getUserInfo()

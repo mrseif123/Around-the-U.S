@@ -4,7 +4,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Around The U.S.</title>
 </head>
 
@@ -16,10 +15,6 @@
   <main id="main_container">
 
     <section class="profile">
-      <!-- <div class="profile__img-place">
-        <img class="profile__avatar" src="./images/profile-avatar.jpg" alt="profile picture">
-      </div> -->
-
       <div class="profile__img-place">
         <img id="avatar" alt="" class="profile__avatar" src="./images/profile-avatar.jpg" alt="profile picture" />
         <div class="profile__edit-overlay"></div>
@@ -47,28 +42,29 @@
     <div class="popup form-container" id="form_popup">
       <div class="popup__container">
         <form class="form" name="edit_profile_form">
+          <button type="button" aria-label="close profile editing form" class="form__close-btn"
+            id="close_button_profile">
+            <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+          </button>
           <h2 class="form__title">Edit profile</h2>
           <input class="form__field form__field_name" type="text" name="name_input_field" id="fullName"
             placeholder="Full Name" required minlength="2" maxlength="40">
           <span class="form__field-error fullName-error"></span>
-
           <input class="form__field form__field_about" type="text" name="about_input_field" id="about"
             placeholder="About" required minlength="2" maxlength="200">
           <span class="form__field-error about-error"></span>
-
           <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
             id="form__profile-submit-button">Save</button>
         </form>
-        <button type="button" aria-label="close profile editing form" class="form__close-btn" id="close_button_profile">
-          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
-        </button>
       </div>
     </div>
 
-    <div class="popup add-container" id='add_popup'>
+    <div class="popup add-container " id='add_popup'>
       <div class="popup__container">
         <form class="form" name="add_place_form">
-
+          <button type="button" aria-label="close place addition form" class="form__close-btn" id="close_button_add">
+            <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+          </button>
           <h2 class="form__title">New place</h2>
           <input class="form__field form__field_title" type="text" name="title_input_field" id="title"
             placeholder="Title" required minlength="1" maxlength="30">
@@ -81,13 +77,11 @@
           <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
             id="form__place-submit-button">Create</button>
         </form>
-        <button type="button" aria-label="close place addition form" class="form__close-btn" id="close_button_add">
-          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
-        </button>
+
       </div>
     </div>
 
-    <div class="popup photo-container" id="photo_popup">
+    <div class="popup photo-container " id="photo_popup">
       <div class="popup__container-image">
         <button class="form__close-btn popup__img-close-btn" type="button" aria-label="close photo addition form">
           <img class="popup__close-img" src="./images/profile-add-icon.svg" alt="close button">
@@ -100,31 +94,31 @@
     <div class="popup delete-container">
       <div class="popup__container">
         <form name="place" class="form" novalidate>
+          <button type="button" aria-label="close profile deletion form" class="form__close-btn"
+            id="close_button_delete">
+            <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+          </button>
           <h2 class="popup__header">Are you sure?</h2>
           <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
             id="form__delete-submit-button">Yes</button>
         </form>
-        <button type="button" aria-label="close profile deletion form" class="form__close-btn" id="close_button_delete">
-          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
-        </button>
+
       </div>
     </div>
 
-    <div class="popup avatar-container">
+    <div class="popup avatar-container popup_visible">
       <div class="popup__container">
         <form name="avatar" class="form" novalidate>
+          <button type="button" aria-label="close profile avatar form" class="form__close-btn" id="close_button_avatar">
+            <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
+          </button>
           <h2 class="popup__header">Change profile picture</h2>
-          <div class="popup__input-container popup__input-container_role_avatar">
-            <input type="url" id="avatar-url" name="avatar" placeholder="Image link"
-              class="popup__input popup__input_role_image-link" required />
-            <span class="popup__input-error popup__input-error_avatar-url"></span>
-          </div>
+          <input class="form__field form__field_link" type="url" name="link_input_field" id="link"
+            placeholder="Image link" required>
           <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
             id="form__avatar-submit-button">Save</button>
         </form>
-        <button type="button" aria-label="close profile avatar form" class="form__close-btn" id="close_button_avatar">
-          <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
-        </button>
+
       </div>
     </div>
 
@@ -144,9 +138,6 @@
   <footer class="footer">
     <p class="footer__copyright">&copy; 2021 Seaf Aliyan</p>
   </footer>
-  <!-- <script src="scripts/initial-cards.js"></script>
-  <script type="module" src="scripts/FormValidation.js"></script>
-  <script type="module" src="scripts/index.js"></script> -->
 </body>
 
 </html>
