@@ -44,11 +44,11 @@ addPlaceValidation.enableValidation();
 avatarValidation.enableValidation();
 
 
-const userInfo = new UserInfo(
-  profileName.textContent,
-  profileSubtitle.textContent,
-  profileAvatar
-);
+const userInfo = new UserInfo({
+  nameElement: profileName,
+  aboutElement: profileSubtitle,
+  avatarElement: profileAvatar,
+});
 
 const confirmDeletePopup = new PopupDelete({
   popupSelector: '.delete-container',
@@ -76,7 +76,7 @@ function createNewCard(item) {
     handleLikeCard: status => {
       return status ? api.likeCard(item._id) : api.removeLike(item._id);
     },
-    templateSelector: '#place-template',
+    templateSelector: '#element-template',
   });
   return newPlace
 }

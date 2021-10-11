@@ -1,28 +1,54 @@
 export default class UserInfo {
-  constructor(name, title, avatarElement) {
+  constructor({
+    name,
+    about,
+    _id,
+    avatar,
+    nameElement,
+    aboutElement,
+    avatarElement
+  }) {
     this._name = name;
-    this._title = title;
-    this._profileName = document.querySelector(".profile__name");
-    this._profileTitle = document.querySelector(".profile__subtitle");
-    this._avatar = avatarElement;
+    this._about = about;
+    this._id = _id;
+    this._avatar = avatar;
+
+    this._profileName = nameElement;
+    this._profileAbout = aboutElement;
+    this._profileImage = avatarElement;
+  }
+
+  updateUserInfo({
+    name,
+    about,
+    _id,
+    avatar
+  }) {
+    this._name = name || this._name;
+    this._about = about || this._about;
+    this._id = _id || this._id;
+    this._avatar = avatar || this._avatar;
+  }
+
+  removeAvatar() {
+    this._profileImage.src = '';
+    this._profileImage.alt = '';
   }
 
   getUserInfo() {
-    this._name = this._profileName.textContent;
-    this._title = this._profileTitle.textContent;
-    const data = {
+    return {
       name: this._name,
-      title: this._title,
+      about: this._about,
+      _id: this._id,
+      avatar: this._avatar,
     };
-    return data;
   }
 
-  setUserInfo(name, title) {
-    this._profileName.textContent = name
-    this._profileTitle.textContent = title
-  }
-
-  setUserAvatar(avatar) {
-    this._avatar.src = `url(${avatar})`;
+  renderUserInfo() {
+    // populate profile with userInfo
+    this._profileName.textContent = this._name;
+    this._profileAbout.textContent = this._about;
+    this._profileImage.src = this._avatar;
+    this._profileImage.alt = this._name;
   }
 }
