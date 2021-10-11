@@ -11,8 +11,16 @@ export const editButton = document.querySelector(".profile__edit-btn");
 export const addButton = document.querySelector(".profile__add-btn");
 export const profileName = document.querySelector(".profile__name");
 export const profileSubtitle = document.querySelector(".profile__subtitle");
+export const profileAvatar = document.querySelector(".profile__avatar");
+export const avatarButton = document.querySelector('.profile__edit-overlay');
+
+
 export const nameField = document.querySelector(".form__field_name");
 export const subtitleField = document.querySelector(".form__field_about");
 
 export const titleField = document.querySelector(".form__field_title");
 export const linkField = document.querySelector(".form__field_link");
+
+export const imageAdderForm = document.querySelector('.add-container');
+export const editProfileForm = document.querySelector('.form-container');
+export const avatarFrom = document.querySelector('.avatar-container');

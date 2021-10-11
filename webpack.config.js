@@ -9,12 +9,14 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
   mode: 'production',
-  entry: path.resolve(__dirname, 'src') + '/scripts/index.js',
+  entry: {
+    main: path.resolve(__dirname, 'src') + '/scripts/index.js',
+  },
   output: {
     publicPath: '',
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'dist'),
+    static: path.resolve(__dirname, 'dist'),
     compress: true,
     port: 8080,
     open: true,
