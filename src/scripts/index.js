@@ -91,7 +91,7 @@ const placeCards = new Section({
 });
 
 
-const imagePreviewPopup = new PopupWithImage(".popup__container-image");
+const imagePreviewPopup = new PopupWithImage(".photo-container");
 
 // initialize profile editor popup
 const profileEditor = new PopupWithForm({

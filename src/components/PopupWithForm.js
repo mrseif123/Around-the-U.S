@@ -23,8 +23,6 @@ export default class PopupWithForm extends Popup {
 
   open() {
     super.open();
-    console.log(this._submitButton)
-
     this._submitButton.textContent = 'Save';
   }
 

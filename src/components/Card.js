@@ -26,7 +26,7 @@ export default class Card {
     this._handleLikeCard(!evt.target.classList.contains('elements__like-btn_active'))
       .then(card => {
         evt.target.classList.toggle('elements__like-btn_active');
-        this._updateLikes(evt, card);
+        this._updatedLikes(evt, card);
       })
       .catch(err => console.error(err));
   }
