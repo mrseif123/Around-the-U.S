@@ -152,7 +152,7 @@ addButton.addEventListener("click", () => {
 });
 
 avatarButton.addEventListener('click', () => {
-  avatarValidation.toggleButtonState();
+  avatarUpdatePopup.open();
 });
 
 
