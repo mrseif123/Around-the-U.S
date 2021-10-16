@@ -18,6 +18,11 @@ export default class PopupDelete extends Popup {
     this._card = evt.target.parentElement;
   }
 
+  close() {
+    this._submitButton.value = 'Delete';
+    super.close();
+  }
+
   setEventListeners() {
     super.setEventListeners();
     this._form.addEventListener('submit', evt => {

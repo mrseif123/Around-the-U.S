@@ -17,7 +17,7 @@ export default class Api {
   }
 
   async getUserInfo() {
-    const res = await fetch(this._baseUrl + '/users/me', {
+    const res = await fetch(`${this._baseUrl}/users/me`, {
       headers: {
         authorization: this._auth,
       },
@@ -26,7 +26,7 @@ export default class Api {
   }
 
   async getGroupCards() {
-    const res = await fetch(this._baseUrl + '/cards', {
+    const res = await fetch(`${this._baseUrl}/cards`, {
       headers: {
         authorization: this._auth,
       },

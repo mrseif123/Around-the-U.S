@@ -91,7 +91,6 @@ const placeCards = new Section({
 
 const imagePreviewPopup = new PopupWithImage(".photo-container");
 
-// initialize profile editor popup
 const profileEditor = new PopupWithForm({
   popupSelector: '.form-container',
   formSubmitHandler: data => {
@@ -111,10 +110,11 @@ const imageAdderPopup = new PopupWithForm({
   popupSelector: '.add-container',
   formSubmitHandler: data => {
     api
-      .addCard(data)
+      .sendCardData(data)
       .then(cardData => {
         const newCard = createNewCard(cardData);
         placeCards.addItem(newCard.createCard());
+        console.log(cardData)
       })
       .then(() => imageAdderPopup.close())
       .catch(err => console.error(`Problem adding card: ${err}`));
@@ -124,7 +124,7 @@ const imageAdderPopup = new PopupWithForm({
 const avatarUpdatePopup = new PopupWithForm({
   popupSelector: '.avatar-container',
   formSubmitHandler: data => {
-    userInfo.removeAvatar(); // displays loading effect while server responds
+    userInfo.removeAvatar();
     api
       .updateAvatar(data)
       .then(() => {
@@ -137,7 +137,6 @@ const avatarUpdatePopup = new PopupWithForm({
 });
 
 
-// add functionality to page buttons
 editButton.addEventListener("click", () => {
   const data = userInfo.getUserInfo();
   nameField.value = data.name;

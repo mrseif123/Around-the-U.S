@@ -32,8 +32,5 @@ export default class PopupWithConfirm extends Popup {
       this.showPatchStatus(true);
     });
   }
-  close() {
-    this._submitButton.value = 'Delete';
-    super.close();
-  }
+
 }
