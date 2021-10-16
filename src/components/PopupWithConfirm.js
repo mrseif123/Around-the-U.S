@@ -33,6 +33,7 @@ export default class PopupWithConfirm extends Popup {
     });
   }
   close() {
+    this._submitButton.value = 'Delete';
     super.close();
   }
 }

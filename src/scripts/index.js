@@ -1,8 +1,5 @@
 import Card from '../components/Card.js';
 import FormValidation from '../components/FormValidation.js';
-import {
-  initialCards
-} from './initial-cards.js';
 
 import Api from '../components/Api.js';
 import UserInfo from '../components/UserInfo.js';
@@ -57,6 +54,7 @@ const confirmDeletePopup = new PopupDelete({
       .deleteCard(cardId)
       .then(() => {
         cardElement.remove();
+        cardElement = null
         confirmDeletePopup.close();
       })
       .catch(err => console.error(`Problem deleting card: ${err}`));
@@ -85,7 +83,7 @@ function createNewCard(item) {
 const placeCards = new Section({
   renderer: item => {
     const newCard = createNewCard(item);
-    placeCards.setItems(newCard.createCard());
+    placeCards.addItem(newCard.createCard());
   },
   containerSelector: ".elements__list",
 });
@@ -104,7 +102,7 @@ const profileEditor = new PopupWithForm({
         userInfo.renderUserInfo();
         profileEditor.close();
       })
-      .catch(err => console.error(`Problem updating profile: ${err}`));
+      .catch(err => console.error(`Problem updating profile: ${err}`))
   },
 });
 
@@ -116,7 +114,7 @@ const imageAdderPopup = new PopupWithForm({
       .addCard(data)
       .then(cardData => {
         const newCard = createNewCard(cardData);
-        placeCards.setItems(newCard.createCard());
+        placeCards.addItem(newCard.createCard());
       })
       .then(() => imageAdderPopup.close())
       .catch(err => console.error(`Problem adding card: ${err}`));
@@ -143,7 +141,7 @@ const avatarUpdatePopup = new PopupWithForm({
 editButton.addEventListener("click", () => {
   const data = userInfo.getUserInfo();
   nameField.value = data.name;
-  subtitleField.value = data.title;
+  subtitleField.value = data.about;
   profileEditor.open();
 });
 
@@ -163,20 +161,16 @@ confirmDeletePopup.setEventListeners();
 avatarUpdatePopup.setEventListeners();
 
 api
-  // fetch and store user data
   .getUserInfo()
   .then(userData => {
     userInfo.updateUserInfo(userData);
   })
-  // fetch and render group cards
   .then(() => {
     api.getGroupCards().then(fetchedCards => {
       placeCards.renderItems(fetchedCards.reverse());
     });
   })
-  // render stored user info
   .then(() => {
-    userInfo.renderUserInfo(); // Successfully updates the profile
-    // removeLoadingStyles(); // Removes shimmer effect
+    userInfo.renderUserInfo();
   })
   .catch(err => console.error(`Problem rendering content: ${err}`));

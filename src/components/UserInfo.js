@@ -21,13 +21,17 @@ export default class UserInfo {
   updateUserInfo({
     name,
     about,
-    _id,
+    id,
     avatar
   }) {
-    this._name = name || this._name;
-    this._about = about || this._about;
-    this._id = _id || this._id;
-    this._avatar = avatar || this._avatar;
+    this._name = name
+    this._about = about
+    this._id = id
+    this._setAvatar(avatar);
+  }
+
+  _setAvatar(avatar) {
+    this._avatar = avatar
   }
 
   removeAvatar() {

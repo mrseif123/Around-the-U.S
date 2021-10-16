@@ -44,9 +44,7 @@ export default class FormValidation {
   }
 
   _hasInvalidInput(inputList) {
-    return inputList.some(input => {
-      return !input.validity.valid;
-    });
+    return inputList.some((input) => !input.validity.valid);
   }
 
   toggleButtonState() {

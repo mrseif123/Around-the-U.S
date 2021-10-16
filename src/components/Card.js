@@ -38,7 +38,7 @@ export default class Card {
 
   _setEventListeners() {
     this._deleteButton = this._newPlace.querySelector(".elements__delete-btn");
-    if (!(this._creatorId === this._user)) {
+    if (this._creatorId !== this._user) {
       this._deleteButton.remove();
     } else {
       this._deleteButton.addEventListener('click', evt => {
@@ -76,7 +76,7 @@ export default class Card {
     this._setEventListeners();
     this._newPlace.querySelector(".elements__title").textContent = this._name;
     this._placeImage.src = this._link;
-    this._placeImage.alt = `${this._name}`;
+    this._placeImage.alt = this._name;
     this._setLikedStatus();
     return this._newPlace;
   }

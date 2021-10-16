@@ -38,7 +38,7 @@ export default class Api {
     name,
     about
   }) {
-    const res = await fetch(this._baseUrl + '/users/me', {
+    const res = await fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: {
         authorization: this._auth,
@@ -55,7 +55,7 @@ export default class Api {
   async updateAvatar({
     avatar
   }) {
-    const res = await fetch(this._baseUrl + '/users/me/avatar', {
+    const res = await fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
       headers: {
         authorization: this._auth,
@@ -72,7 +72,7 @@ export default class Api {
     name,
     link
   }) {
-    const res = await fetch(this._baseUrl + '/cards', {
+    const res = await fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
       headers: {
         authorization: this._auth,
