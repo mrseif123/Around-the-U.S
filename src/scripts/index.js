@@ -7,6 +7,7 @@ import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupDelete from '../components/PopupDelete.js';
+import renderLoading from "../utils/utils.js"
 
 import '../pages/index.css';
 import '../vendor/normalize.css';
@@ -24,7 +25,9 @@ import {
   avatarButton,
   avatarFrom,
   editButton,
-  addButton
+  addButton,
+  addSubmitButton,
+  profileSubmitButton
 } from "./constants.js"
 
 
@@ -90,7 +93,6 @@ const placeCards = new Section({
 
 
 const imagePreviewPopup = new PopupWithImage(".photo-container");
-
 const profileEditor = new PopupWithForm({
   popupSelector: '.form-container',
   formSubmitHandler: data => {
@@ -102,6 +104,9 @@ const profileEditor = new PopupWithForm({
         profileEditor.close();
       })
       .catch(err => console.error(`Problem updating profile: ${err}`))
+      .finally(() => {
+        renderLoading(false, profileSubmitButton)
+      })
   },
 });
 
@@ -110,14 +115,16 @@ const imageAdderPopup = new PopupWithForm({
   popupSelector: '.add-container',
   formSubmitHandler: data => {
     api
-      .sendCardData(data)
+      .addCard(data)
       .then(cardData => {
         const newCard = createNewCard(cardData);
         placeCards.addItem(newCard.createCard());
-        console.log(cardData)
       })
       .then(() => imageAdderPopup.close())
-      .catch(err => console.error(`Problem adding card: ${err}`));
+      .catch(err => console.error(`Problem adding card: ${err}`))
+      .finally(() => {
+        renderLoading(false, addSubmitButton)
+      })
   },
 });
 
