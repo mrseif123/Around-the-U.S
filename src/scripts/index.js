@@ -60,7 +60,10 @@ const confirmDeletePopup = new PopupDelete({
         cardElement = null
         confirmDeletePopup.close();
       })
-      .catch(err => console.error(`Problem deleting card: ${err}`));
+      .catch(err => console.error(`Problem deleting card: ${err}`))
+      .finally(() => {
+        renderLoading(false, profileSubmitButton, "Deleting....", "Delete")
+      })
   },
 });
 
@@ -75,7 +78,11 @@ function createNewCard(item) {
     },
     userData: userInfo.getUserInfo(),
     handleLikeCard: status => {
-      return status ? api.likeCard(item._id) : api.removeLike(item._id);
+      return status ? api.likeCard(item._id)
+        .catch(err => console.error(`Problem adding like: ${err}`)) :
+        api.removeLike(item._id)
+        .catch(err => console.error(`Problem removing like: ${err}`))
+
     },
     templateSelector: '#element-template',
   });
@@ -105,7 +112,7 @@ const profileEditor = new PopupWithForm({
       })
       .catch(err => console.error(`Problem updating profile: ${err}`))
       .finally(() => {
-        renderLoading(false, profileSubmitButton)
+        renderLoading(false, profileSubmitButton, "Saving....", "Save")
       })
   },
 });
@@ -123,7 +130,7 @@ const imageAdderPopup = new PopupWithForm({
       .then(() => imageAdderPopup.close())
       .catch(err => console.error(`Problem adding card: ${err}`))
       .finally(() => {
-        renderLoading(false, addSubmitButton)
+        renderLoading(false, addSubmitButton, "Saving...", "Save")
       })
   },
 });
@@ -139,7 +146,10 @@ const avatarUpdatePopup = new PopupWithForm({
         userInfo.renderUserInfo();
         avatarUpdatePopup.close();
       })
-      .catch(err => console.error(`Problem updating avatar: ${err}`));
+      .catch(err => console.error(`Problem updating avatar: ${err}`))
+      .finally(() => {
+        renderLoading(false, profileSubmitButton, "Saving....", "Save")
+      })
   },
 });
 

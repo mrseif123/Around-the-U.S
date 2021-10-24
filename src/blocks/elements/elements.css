@@ -5,6 +5,10 @@
 @import url("./__description/elements__description.css");
 @import url("./__like-btn/elements__like-btn.css");
 @import url("./__delete-btn/elements__delete-btn.css");
+@import url("./__likes/elements__likes.css");
+@import url("./__like-container/elements__like-container.css");
+
+
 
 .elements {
   margin: 0;

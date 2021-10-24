@@ -96,7 +96,7 @@
             id="close_button_delete">
             <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
           </button>
-          <h2 class="popup__header">Are you sure?</h2>
+          <h2 class="form__title">Are you sure?</h2>
           <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
             id="form__delete-submit-button">Yes</button>
         </form>
@@ -110,8 +110,8 @@
           <button type="button" aria-label="close profile avatar form" class="form__close-btn" id="close_button_avatar">
             <img class="form__close-img" src="./images/profile-add-icon.svg" alt="close button">
           </button>
-          <h2 class="popup__header">Change profile picture</h2>
-          <input class="form__field form__field_link" type="url" name="link" id="avatar_link" placeholder="Image link"
+          <h2 class="form__title">Change profile picture</h2>
+          <input class="form__field form__field_link" type="url" name="link" id="link" placeholder="Image link"
             required>
           <span class="form__field-error link-error"></span>
           <button type="submit" aria-label="submit profile changes" class="form__submit-btn"
@@ -126,8 +126,10 @@
         <img class="elements__img">
         <div class="elements__description">
           <h2 class="elements__title"></h2>
-          <button type="button" aria-label="like image" class="elements__like-btn"></button>
-          <p class="element__likes">0</p>
+          <div class="elements__like-container">
+            <button type="button" aria-label="like image" class="elements__like-btn"></button>
+            <p class="elements__likes">0</p>
+          </div>
         </div>
         <button type="button" aria-label="delete icon" class="elements__delete-btn"></button>
       </li>

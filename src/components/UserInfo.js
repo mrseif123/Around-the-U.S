@@ -2,7 +2,7 @@ export default class UserInfo {
   constructor({
     name,
     about,
-    _id,
+    id,
     avatar,
     nameElement,
     aboutElement,
@@ -10,7 +10,7 @@ export default class UserInfo {
   }) {
     this._name = name;
     this._about = about;
-    this._id = _id;
+    this._id = id;
     this._avatar = avatar;
 
     this._profileName = nameElement;
@@ -43,7 +43,7 @@ export default class UserInfo {
     return {
       name: this._name,
       about: this._about,
-      _id: this._id,
+      id: this._id,
       avatar: this._avatar,
     };
   }
