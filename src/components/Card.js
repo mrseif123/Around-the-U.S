@@ -32,12 +32,15 @@ export default class Card {
   }
 
   _updatedLikes(e, card) {
-    const displayedLikesElement = this._newPlace.querySelector('.element__likes');
+    const displayedLikesElement = this._newPlace.querySelector('.elements__likes');
     displayedLikesElement.textContent = card.likes.length;
+    // this._likedData = card.likes.length;
+    // this._renderLikes()
   }
 
   _setEventListeners() {
     this._deleteButton = this._newPlace.querySelector(".elements__delete-btn");
+    console.log(this._name, this._creatorId, this._user)
     if (this._creatorId !== this._user) {
       this._deleteButton.remove();
     } else {
@@ -63,8 +66,8 @@ export default class Card {
     return cardElement;
   }
 
-  _setLikedStatus() {
-    this._newPlace.querySelector('.element__likes').textContent = this._timesLiked;
+  _renderLikes() {
+    this._newPlace.querySelector('.elements__likes').textContent = this._timesLiked;
     const userHasLiked = this._likedData.some(likes => likes._id === this._user);
     if (userHasLiked) {
       this._newPlace.querySelector('.elements__like-btn').classList.add('elements__like-btn_active');
@@ -77,7 +80,7 @@ export default class Card {
     this._newPlace.querySelector(".elements__title").textContent = this._name;
     this._placeImage.src = this._link;
     this._placeImage.alt = this._name;
-    this._setLikedStatus();
+    this._renderLikes();
     return this._newPlace;
   }
 }

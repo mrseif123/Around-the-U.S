@@ -7,6 +7,7 @@ import Section from '../components/Section.js';
 import PopupWithForm from '../components/PopupWithForm.js';
 import PopupWithImage from '../components/PopupWithImage.js';
 import PopupDelete from '../components/PopupDelete.js';
+import renderLoading from "../utils/utils.js"
 
 import '../pages/index.css';
 import '../vendor/normalize.css';
@@ -24,7 +25,9 @@ import {
   avatarButton,
   avatarFrom,
   editButton,
-  addButton
+  addButton,
+  addSubmitButton,
+  profileSubmitButton
 } from "./constants.js"
 
 
@@ -57,7 +60,10 @@ const confirmDeletePopup = new PopupDelete({
         cardElement = null
         confirmDeletePopup.close();
       })
-      .catch(err => console.error(`Problem deleting card: ${err}`));
+      .catch(err => console.error(`Problem deleting card: ${err}`))
+      .finally(() => {
+        renderLoading(false, profileSubmitButton, "Deleting....", "Delete")
+      })
   },
 });
 
@@ -72,7 +78,11 @@ function createNewCard(item) {
     },
     userData: userInfo.getUserInfo(),
     handleLikeCard: status => {
-      return status ? api.likeCard(item._id) : api.removeLike(item._id);
+      return status ? api.likeCard(item._id)
+        .catch(err => console.error(`Problem adding like: ${err}`)) :
+        api.removeLike(item._id)
+        .catch(err => console.error(`Problem removing like: ${err}`))
+
     },
     templateSelector: '#element-template',
   });
@@ -90,7 +100,6 @@ const placeCards = new Section({
 
 
 const imagePreviewPopup = new PopupWithImage(".photo-container");
-
 const profileEditor = new PopupWithForm({
   popupSelector: '.form-container',
   formSubmitHandler: data => {
@@ -102,6 +111,9 @@ const profileEditor = new PopupWithForm({
         profileEditor.close();
       })
       .catch(err => console.error(`Problem updating profile: ${err}`))
+      .finally(() => {
+        renderLoading(false, profileSubmitButton, "Saving....", "Save")
+      })
   },
 });
 
@@ -110,14 +122,16 @@ const imageAdderPopup = new PopupWithForm({
   popupSelector: '.add-container',
   formSubmitHandler: data => {
     api
-      .sendCardData(data)
+      .addCard(data)
       .then(cardData => {
         const newCard = createNewCard(cardData);
         placeCards.addItem(newCard.createCard());
-        console.log(cardData)
       })
       .then(() => imageAdderPopup.close())
-      .catch(err => console.error(`Problem adding card: ${err}`));
+      .catch(err => console.error(`Problem adding card: ${err}`))
+      .finally(() => {
+        renderLoading(false, addSubmitButton, "Saving...", "Save")
+      })
   },
 });
 
@@ -132,7 +146,10 @@ const avatarUpdatePopup = new PopupWithForm({
         userInfo.renderUserInfo();
         avatarUpdatePopup.close();
       })
-      .catch(err => console.error(`Problem updating avatar: ${err}`));
+      .catch(err => console.error(`Problem updating avatar: ${err}`))
+      .finally(() => {
+        renderLoading(false, profileSubmitButton, "Saving....", "Save")
+      })
   },
 });
 

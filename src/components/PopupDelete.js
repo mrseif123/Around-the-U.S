@@ -19,7 +19,7 @@ export default class PopupDelete extends Popup {
   }
 
   close() {
-    this._submitButton.value = 'Delete';
+    this._button.value = 'Delete';
     super.close();
   }
 
@@ -27,7 +27,6 @@ export default class PopupDelete extends Popup {
     super.setEventListeners();
     this._form.addEventListener('submit', evt => {
       evt.preventDefault();
-      this._button.textContent = 'Deleting...';
       this._formSubmitHandler(this._card, this._cardId);
     });
   }

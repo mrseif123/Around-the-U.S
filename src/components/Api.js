@@ -36,7 +36,9 @@ export default class Api {
 
   async updateProfile({
     name,
-    about
+    about,
+    id,
+    avatar
   }) {
     const res = await fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
@@ -45,8 +47,10 @@ export default class Api {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name: name,
-        about: about,
+        name,
+        about,
+        id,
+        avatar
       }),
     });
     return this._checkResponse(res);
@@ -80,7 +84,7 @@ export default class Api {
       },
       body: JSON.stringify({
         name,
-        link,
+        link
       }),
     });
     return this._checkResponse(res);
