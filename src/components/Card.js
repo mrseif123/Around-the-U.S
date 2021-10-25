@@ -10,7 +10,7 @@ export default class Card {
 
     this._name = card.name;
     this._link = card.link;
-    this._likedData = card.likes;
+    this._likes = card.likes;
     this._timesLiked = card.likes.length;
     this._id = card._id;
     this._creatorName = card.owner.name;
@@ -26,15 +26,13 @@ export default class Card {
     this._handleLikeCard(!evt.target.classList.contains('elements__like-btn_active'))
       .then(card => {
         evt.target.classList.toggle('elements__like-btn_active');
-        this._updatedLikes(evt, card);
+        this._updateLikes(evt, card);
       })
   }
 
-  _updatedLikes(e, card) {
+  _updateLikes(e, card) {
     const displayedLikesElement = this._newPlace.querySelector('.elements__likes');
     displayedLikesElement.textContent = card.likes.length;
-    // this._likedData = card.likes.length;
-    // this._renderLikes()
   }
 
   _setEventListeners() {
@@ -66,7 +64,7 @@ export default class Card {
 
   _renderLikes() {
     this._newPlace.querySelector('.elements__likes').textContent = this._timesLiked;
-    const userHasLiked = this._likedData.some(likes => likes._id === this._user);
+    const userHasLiked = this._likes.some(likes => likes._id === this._user);
     if (userHasLiked) {
       this._newPlace.querySelector('.elements__like-btn').classList.add('elements__like-btn_active');
     }
