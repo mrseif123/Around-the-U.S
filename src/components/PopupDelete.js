@@ -19,7 +19,6 @@ export default class PopupDelete extends Popup {
   }
 
   close() {
-    // this._button.value = 'Delete';
     super.close();
   }
 

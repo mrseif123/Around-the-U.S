@@ -1,3 +1,7 @@
+import {
+  addLocale
+} from "core-js";
+
 export default class UserInfo {
   constructor({
     name,
@@ -27,11 +31,13 @@ export default class UserInfo {
     this._name = name
     this._about = about
     this._id = _id
-    this._setAvatar(avatar);
+    this.setAvatar(avatar);
   }
 
-  _setAvatar(avatar) {
+  setAvatar(avatar) {
     this._avatar = avatar
+    this._profileImage.src = avatar;
+    this._profileImage.alt = "Avatar picture";
   }
 
   removeAvatar() {
@@ -49,7 +55,6 @@ export default class UserInfo {
   }
 
   renderUserInfo() {
-    // populate profile with userInfo
     this._profileName.textContent = this._name;
     this._profileAbout.textContent = this._about;
     this._profileImage.src = this._avatar;

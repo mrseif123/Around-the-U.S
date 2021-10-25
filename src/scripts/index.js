@@ -138,12 +138,10 @@ const imageAdderPopup = new PopupWithForm({
 const avatarUpdatePopup = new PopupWithForm({
   popupSelector: '.avatar-container',
   formSubmitHandler: data => {
-    userInfo.removeAvatar();
     api
       .updateAvatar(data)
       .then(() => {
-        userInfo.updateUserInfo(data);
-        userInfo.renderUserInfo();
+        userInfo.setAvatar(data.link);
         avatarUpdatePopup.close();
       })
       .catch(err => console.error(`Problem updating avatar: ${err}`))

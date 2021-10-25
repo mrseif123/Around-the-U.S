@@ -38,7 +38,7 @@ export default class Api {
     name,
     about,
     id,
-    avatar
+    link
   }) {
     const res = await fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
@@ -50,14 +50,14 @@ export default class Api {
         name,
         about,
         id,
-        avatar
+        link
       }),
     });
     return this._checkResponse(res);
   }
 
   async updateAvatar({
-    avatar
+    link
   }) {
     const res = await fetch(`${this._baseUrl}/users/me/avatar`, {
       method: 'PATCH',
@@ -66,7 +66,7 @@ export default class Api {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        avatar: avatar
+        avatar: link
       }),
     });
     return this._checkResponse(res);
