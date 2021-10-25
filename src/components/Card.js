@@ -40,7 +40,6 @@ export default class Card {
 
   _setEventListeners() {
     this._deleteButton = this._newPlace.querySelector(".elements__delete-btn");
-    console.log(this._name, this._creatorId, this._user)
     if (this._creatorId !== this._user) {
       this._deleteButton.remove();
     } else {
