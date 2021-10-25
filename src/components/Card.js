@@ -67,7 +67,7 @@ export default class Card {
   }
 
   _renderLikes() {
-    this._newPlace.querySelector('.elements__likes').textContent = this._timesLiked;
+    this._newPlace.querySelector('.elements__likes').textContent = this._likes.length;
     if (this._checkIfLiked()) {
       this._newPlace.querySelector('.elements__like-btn').classList.add('elements__like-btn_active');
     }
