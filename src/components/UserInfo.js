@@ -21,12 +21,12 @@ export default class UserInfo {
   updateUserInfo({
     name,
     about,
-    id,
+    _id,
     avatar
   }) {
     this._name = name
     this._about = about
-    this._id = id
+    this._id = _id
     this._setAvatar(avatar);
   }
 

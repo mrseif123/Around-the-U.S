@@ -73,8 +73,8 @@ function createNewCard(item) {
     handleCardClick: (name, link) => {
       imagePreviewPopup.open(name, link);
     },
-    handleDeleteClick: evt => {
-      confirmDeletePopup.open(evt, item._id);
+    handleDeleteClick: (evt, id) => {
+      confirmDeletePopup.open(evt, id);
     },
     userData: userInfo.getUserInfo(),
     handleLikeCard: status => {
@@ -105,8 +105,8 @@ const profileEditor = new PopupWithForm({
   formSubmitHandler: data => {
     api
       .updateProfile(data)
-      .then(() => {
-        userInfo.updateUserInfo(data);
+      .then((res) => {
+        userInfo.updateUserInfo(res);
         userInfo.renderUserInfo();
         profileEditor.close();
       })

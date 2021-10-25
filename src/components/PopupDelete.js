@@ -13,7 +13,7 @@ export default class PopupDelete extends Popup {
 
   open(evt, cardId) {
     super.open();
-    this._button.textContent = 'Yes';
+    this._button && (this._button.textContent = 'Yes')
     this._cardId = cardId;
     this._card = evt.target.parentElement;
   }
