@@ -22,6 +22,8 @@ export default class Card {
     this._handleLikeCard = handleLikeCard;
   }
 
+  _checkIfLiked = () => this._likes.some(like => like._id === this._user)
+
   _toggleLike(evt) {
     this._handleLikeCard(!evt.target.classList.contains('elements__like-btn_active'))
       .then(card => {
@@ -33,6 +35,8 @@ export default class Card {
   _updateLikes(e, card) {
     const displayedLikesElement = this._newPlace.querySelector('.elements__likes');
     displayedLikesElement.textContent = card.likes.length;
+    // this._likes = card._likes.length;
+    // this._renderLikes()
   }
 
   _setEventListeners() {
@@ -64,8 +68,7 @@ export default class Card {
 
   _renderLikes() {
     this._newPlace.querySelector('.elements__likes').textContent = this._timesLiked;
-    const userHasLiked = this._likes.some(likes => likes._id === this._user);
-    if (userHasLiked) {
+    if (this._checkIfLiked()) {
       this._newPlace.querySelector('.elements__like-btn').classList.add('elements__like-btn_active');
     }
   }
