@@ -28,7 +28,6 @@ export default class Card {
         evt.target.classList.toggle('elements__like-btn_active');
         this._updatedLikes(evt, card);
       })
-      .catch(err => console.error(err));
   }
 
   _updatedLikes(e, card) {
