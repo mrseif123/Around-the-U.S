@@ -25,24 +25,21 @@ export default class Card {
   _checkIfLiked = () => this._likes.some(like => like._id === this._user)
 
 
-  // I  tried splitting code as you suggested, the most I got was no errors but the numbers and icons
-  // don't render.
-
   _toggleLike(evt) {
-    // this._handleLikeCard(!this._checkIfLiked())
+    this._handleLikeCard(!this._checkIfLiked())
     // this._renderLikes()
-    this._handleLikeCard(!evt.target.classList.contains('elements__like-btn_active'))
-      .then(card => {
-        evt.target.classList.toggle('elements__like-btn_active');
-        this._updateLikes(card);
-      })
+    // this._handleLikeCard(!evt.target.classList.contains('elements__like-btn_active'))
+    //   .then(card => {
+    //     evt.target.classList.toggle('elements__like-btn_active');
+    //     this._updateLikes(card);
+    //   })
   }
 
-  _updateLikes(card) {
-    const displayedLikesElement = this._newPlace.querySelector('.elements__likes');
-    displayedLikesElement.textContent = card.likes.length;
-    // this._likes = likes;
-    // this._renderLikes()
+  updateLikes(likes) {
+    // const displayedLikesElement = this._newPlace.querySelector('.elements__likes');
+    // displayedLikesElement.textContent = card.likes.length;
+    this._likes = likes;
+    this._renderLikes()
   }
 
   _setEventListeners() {
@@ -76,6 +73,8 @@ export default class Card {
     this._newPlace.querySelector('.elements__likes').textContent = this._likes.length;
     if (this._checkIfLiked()) {
       this._newPlace.querySelector('.elements__like-btn').classList.add('elements__like-btn_active');
+    } else if (!this._checkIfLiked()) {
+      this._newPlace.querySelector('.elements__like-btn').classList.remove('elements__like-btn_active');
     }
   }
 

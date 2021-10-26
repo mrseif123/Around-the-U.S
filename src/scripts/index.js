@@ -79,11 +79,15 @@ function createNewCard(item) {
     userData: userInfo.getUserInfo(),
     handleLikeCard: status => {
       return status ? api.likeCard(item._id)
-        // .then(newPlace._updateLikes(item.likes))
+        .then(data => {
+          newPlace.updateLikes(data.likes)
+        })
         .catch(err => console.error(`Problem adding like: ${err}`)) :
 
         api.removeLike(item._id)
-        // .then(newPlace._updateLikes(item.likes))
+        .then(data => {
+          newPlace.updateLikes(data.likes)
+        })
         .catch(err => console.error(`Problem removing like: ${err}`))
     },
     templateSelector: '#element-template',
