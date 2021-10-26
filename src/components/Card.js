@@ -24,13 +24,8 @@ export default class Card {
 
   _checkIfLiked = () => this._likes.some(like => like._id === this._user)
 
-  _toggleLike(evt) {
+  _toggleLike() {
     this._handleLikeCard(!this._checkIfLiked())
-  }
-
-  updateLikes(likes) {
-    this._likes = likes;
-    this._renderLikes()
   }
 
   _setEventListeners() {
@@ -67,6 +62,11 @@ export default class Card {
     } else if (!this._checkIfLiked()) {
       this._newPlace.querySelector('.elements__like-btn').classList.remove('elements__like-btn_active');
     }
+  }
+
+  updateLikes(likes) {
+    this._likes = likes;
+    this._renderLikes()
   }
 
   createCard() {
